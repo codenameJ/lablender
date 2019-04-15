@@ -1,0 +1,8 @@
+[Mon, 01 Apr 19 19:34:21 +0700][ERROR] [0]: The method 'trim' doesn't exist on model 'students'
+
+[Mon, 01 Apr 19 19:47:14 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '590610636?' LIMIT :APL0:
+
+[Mon, 01 Apr 19 19:49:26 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '12?' LIMIT :APL0:
+
+[Mon, 01 Apr 19 20:01:47 +0700][ERROR] [0]: Address in mailbox given [] does not comply with RFC 2822, 3.6.2.
+

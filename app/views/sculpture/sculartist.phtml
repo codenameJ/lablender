@@ -1,0 +1,115 @@
+<!DOCTYPE html>  
+<html>
+
+<!-- หน้านี้กดที่ชื่อ artist แล้วจะ link to artist_detail-->
+
+<head>
+
+		<title>Sculpture Collection</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+	
+    <?php echo $this->assets->outputCss('styles'); ?>    
+    <?php echo $this->assets->outputJs('scripts'); ?> 
+
+    
+  </head>
+
+  <!------------------------------------------------------------------------------------------------------------------->
+
+<body>
+
+
+
+
+<div class="page-wrap" id="root">
+
+<!-- Content-->
+<div class="wil-content">
+
+      	<!-- Section -->
+          <section class="awe-section">
+					<div class="container">
+
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">Sculpture Artist</h2>
+							<p class="page-title__text">Curabitur elementum urna augue, eu porta</p>
+							<div class="page-title__divider"></div>
+            </div><!-- End / page-title -->
+
+
+             <div class="container-login100-form-btn m-t-32">
+           
+           <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>catagory" class="btn" role="button">CATEGORY</a>
+           <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>sculpture" class="btn" role="button">BROWSE BY ARTWORK</a>
+           <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>sculpture/sculartist" class="btn" role="button">BROWSE BY ARTIST</a>
+
+       </div>
+
+        <br><br><br>
+
+<div class="container container-form">
+<div class="panel panel-primary"> 
+  <div class="panel-body">
+
+
+
+                     <table data-toggle="table">
+                          <thead>
+                               <tr>
+                               <th data-field="Name">Sculpture Artist Name</th>
+                            
+                               </tr>  
+                          </thead> 
+
+                          <?php
+                          foreach($sentscuobj as $row)
+                          {
+                              $aobj=ArtObject::FindFirst("obj_id ='$row->Art_Object_obj_id'");
+                          ?>
+                               <tr> 
+                                    <td> <a> <?php echo $aobj->Artist_Name; ?></a> </td>  
+                               </tr>
+                               <?php
+                          }  
+                          ?>
+                     </table>
+
+                     
+                </div>  
+            </div>      
+        </div> 
+
+
+
+			<!-- footer -->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-lg-6 ">
+							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- End / footer -->
+
+
+        
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+                     
+                                    
+      </body>  
+ </html>  

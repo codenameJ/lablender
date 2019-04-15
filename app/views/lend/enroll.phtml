@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>  
+<html>
+
+
+ <head>
+
+<title>Art Class</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+
+</head>
+
+  <!---------------------------------------------------------------------------------------------------------------->
+ 
+ 
+ <body>
+
+
+
+   
+<div class="page-wrap" id="root">
+<form action="" method="post" enctype="multipart/form-data">			
+   
+			
+			<!-- Content-->
+			<div class="wil-content">
+				
+				<!-- Section -->
+				<section class="awe-section">
+					<div class="container">
+						
+						<!-- page-title -->
+						<div class="page-title pb-40">
+							<h2 class="page-title__title">Art Class</h2>
+							<p class="page-title__text">Detail</p>
+							<div class="page-title__divider"></div>
+						</div><!-- End / page-title -->
+						
+					</div>
+				</section>
+				<!-- End / Section -->
+				
+				
+				<!-- Section -->
+				<section class="awe-section bg-gray">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-lg-5 "><img src="http://maisontoulouse.info/wp-content/uploads/artist-painting-artist-painting-at-easel-flowers-palette-pretty-victoria-park-gallery.jpeg" alt="">
+              </div>
+              
+							<div class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1">
+              
+              
+								<div class="mt-30">
+                  <h2 class="about__title"><?php echo $sentcurclass->Name; ?></h2>
+
+
+									<p class="about__subtitle"> Class Name: <?php echo $sentcurclass->Name; ?>
+                    <br> Type: <?php echo $sentcurclass->type; ?>
+                    <br> Date: <?php echo $sentcurclass->date; ?>
+                    <br> Tme: <?php echo $sentcurclass->time; ?>
+                    <br> Artist: <?php echo $sentcurclass->Alive_Artist_Name; ?>
+
+<br>
+<br>
+<br>
+<br>
+					   <?php 
+					   if($this->session->has('memberEmail')){
+					   if(!$this->session->has('IsAdmin')){ ?>
+          <form action="" method="post">
+          <div class="form-item">
+          <input type="hidden"  name="profileId"  value="<?php echo $profile->id;?>">
+
+          <br><br>
+          <button type="submit" class="md-btn md-btn--outline-primary">Enroll Classroom</button>
+
+		  		<?php }
+		}
+		 ?>
+          <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>artclass">Go Back
+										</a>
+
+           </div>
+        </form>
+
+                 
+
+                  
+
+					        </div>
+
+									
+								</div><!-- End /  -->
+								
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- End / Section -->
+	</form>			
+			</div>
+			<!-- End / Content-->
+      
+
+
+
+
+
+          
+          <!-- footer -->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-lg-6 ">
+							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div><!-- End / footer -->
+
+
+        
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+			  <br><br><br><br><br><br><br><br>
+
+</body>
+</html>
+

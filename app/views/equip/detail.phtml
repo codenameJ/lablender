@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>  
+<html>
+
+<!-- show list of equipment -->
+
+
+<head>
+
+  <title>Equipment List</title>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+    
+
+
+  <?php echo $this->getContent(); ?> 
+
+</head>
+
+
+<!-- ------------------------------------------------------------------ -->
+  
+
+<body>
+
+<div id="fh5co-page">
+  <div id="fh5co-main">
+    <div class="fh5co-narrow-content">
+      <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft" > <strong>Lab Equipment </strong></h1>
+     
+      <br>
+
+      <div class="row row-bottom-padded-md">
+      <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+      <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
+      <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
+      <br>
+      <div class="fh5co-text">
+        <input type="text" class="form-control"id="myInput" onkeyup="myFunction()" placeholder="Search for item." id="myInput" onkeyup="myFunction()" placeholder="Search for item.">
+      </div>
+    </div>
+</div>
+
+<!-- --------------------------------------------------- -->
+
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    });
+  });
+  </script>
+
+
+<!-- --------------------------------------------------- -->
+
+
+
+          <!------------- equipments list table --------------------------->
+          <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
+
+          <table id="myTable" class="table">
+            <tr><h2 class="fh5co-heading" >Equipment Name</h2></tr>
+
+            <!-- list column 1----------------- -->
+
+            <?php  
+              foreach($senteq as $row)
+            { ?>
+
+            <tr>
+              <td><p class="fh5co-lead"><?php echo $senteq->Equip_id ?></p></td>
+              
+            </tr>  
+
+            <?php } ?>
+
+            <!------------------------- end column 1 -->
+
+          </table>
+
+          </div>
+        <!-- </div> -->
+      </div>
+
+
+    
+  </div>
+
+
+
+
+
+</div>
+
+
+
+     
+<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+
+</body>  
+ </html>  

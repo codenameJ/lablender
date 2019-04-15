@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>  
+<html>
+
+<!-- show datail : usre mode -->
+<!-- user จะกดรับของได้ที่หน้านี้ -->
+
+
+<head>
+
+  <title>Detail</title>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+    
+
+
+  <?php echo $this->getContent(); ?> 
+
+</head>
+
+
+<!-- ------------------------------------------------------------------ -->
+  
+
+<body>
+
+<div id="fh5co-page">
+  <div id="fh5co-main">
+    <div class="fh5co-narrow-content">
+      <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft" > <strong>Detail</strong></h1>
+     
+      <br>
+
+
+          <!------------- equip list table --------------------------->
+          <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
+
+			<table id="myTable" class="table">
+
+      <!-- row 1 head -->
+      <tr>
+        <th><h2 class="fh5co-heading" >Equipment</h2></th>
+		<th><h2 class="fh5co-heading"> Amount </h2></th>
+        <th><h2 class="fh5co-heading"> Lend Date </h2></th>
+		<th><h2 class="fh5co-heading"> Return Date </h2></th>
+      </tr>
+      <!------------------------ end row 1 -->
+
+      <!-- row 2++ -->
+      
+      <?php  
+        foreach($sentdata as $row)
+      { ?>
+
+      <tr>
+        <!-- equipment-->
+        <td><p class="fh5co-lead"><?php echo $row->EquipName ?></p></td>
+
+        <!-- amount -->
+        <td><input type="number" id="myNumber" class="input-group" value="1" min="1"></td>
+
+        <!-- date and time lend -->
+        <td><p>DD/MM/YY 00.00</p></td>
+
+		 <!-- date and time return-->
+		 <!-- ถ้า status ยังไม่เป็น ready/received จะขึ้นว่า "XX/XX/XX" -->
+		 <td><p>DD/MM/YY 00.00</p></td>
+
+      </tr>  
+
+      <?php } ?>
+
+      <!------------------------- end row 2++ -->
+    </table>
+
+<!-- end table----------------------------------------------------------- -->
+
+
+ 		
+
+		 <!--------------------- status : User --------------------->
+		<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+
+			 <!---- กรณีมารับของได้ status=ready ---->
+          <p> Your lending equipments was prepared, please come to get your lending equipment </p>
+          <p> If you already received your lenging equipment, please click RECIEVED</p>
+
+					<!-- recieved butt -->
+					<button class="btn btn-primary btn-md"> Recieved </button>
+
+          <!-- กรณีรับของแล้ว status = recieved ข้อความนี้ถึงจะขึ้นมา และข้อความด้านบนต้องหาย -->
+          <p> You already recieved your equipment, please return them on : dd/mm/yy 00.00</p>
+
+
+			</div>
+		</div>
+		 <!-------------------------------------------------------->
+
+
+          </div>
+        <!-- </div> -->
+      </div>
+    
+  </div>
+
+
+</div>
+
+
+
+     
+<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+
+</body>  
+ </html>  

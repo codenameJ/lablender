@@ -1,0 +1,68 @@
+[Wed, 07 Nov 18 02:58:30 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 02:58:38 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 02:59:00 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 02:59:01 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 02:59:01 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:10 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:16 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:46 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:47 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:47 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:48 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:48 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:03:52 +0700][ERROR] [0]: Scanning error before 'Delacroix' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix (77)
+
+[Wed, 07 Nov 18 03:04:12 +0700][ERROR] [0]: Scanning error before 'Delacroix LIMIT ...' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix LIMIT :APL0: (90)
+
+[Wed, 07 Nov 18 03:04:12 +0700][ERROR] [0]: Scanning error before 'Delacroix LIMIT ...' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix LIMIT :APL0: (90)
+
+[Wed, 07 Nov 18 03:04:12 +0700][ERROR] [0]: Scanning error before 'Delacroix LIMIT ...' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix LIMIT :APL0: (90)
+
+[Wed, 07 Nov 18 03:04:15 +0700][ERROR] [0]: Scanning error before 'Delacroix LIMIT ...' when parsing: SELECT [museum_goers].* FROM [museum_goers] WHERE Exhibition_Name ='Delacroix LIMIT :APL0: (90)
+
+[Wed, 07 Nov 18 21:55:24 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 21:57:34 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 22:00:09 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 22:01:44 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 22:05:19 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 22:10:33 +0700][ERROR] [22001]: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'obj_id' at row 1
+
+[Wed, 07 Nov 18 22:14:30 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE obj_id = '400000002' LIMIT :APL0:
+
+[Wed, 07 Nov 18 22:38:03 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 22:38:05 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 22:38:09 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 22:38:30 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:30:27 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:31:46 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:35:57 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:38:21 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:41:16 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+
+[Wed, 07 Nov 18 23:43:19 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [external_collection].* FROM [external_collection] WHERE obj_id = '100000001' LIMIT :APL0:
+

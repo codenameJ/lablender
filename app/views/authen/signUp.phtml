@@ -1,0 +1,89 @@
+<?php echo $this->flashSession->output(); 
+ 
+ ?>
+ 
+<!DOCTYPE html>  
+<html>
+
+<head>
+
+<title>Sign Up</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="icon" type="image/png" href="public/imag/login/icons/favicon.ico"/>
+
+    <?php echo $this->assets->outputCss('styleslogin'); ?>    
+		<?php echo $this->assets->outputJs('scriptslogin'); ?> 
+		<?php echo $this->assets->outputCss('styles'); ?>    
+		<?php echo $this->assets->outputJs('scripts'); ?> 
+		
+</head>
+
+<?php echo $this->getContent(); ?>
+<!---------------------------------------------------------------------------------------------------------------->
+
+
+<body>
+
+	<form action="" method="post">
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-50 p-b-90">
+				<form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-51">
+						Sign Up
+					</span>
+
+					<input type="hidden"  name="id"  value="<?php echo $client->client_id;?>">
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
+						<input class="input100" type="text" name="name" placeholder="Name" required>
+						<span class="focus-input100"></span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password" required>
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "ID is required">
+						<input class="input100" type="text" name="studentid" placeholder="Student ID" required pattern="[0-9]{9}">
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "E-mail is required">
+						<input class="input100" type="email" name="email" placeholder="E-mail" required >
+						<!-- pattern="[a-z0-9._%+-]+@cmu.ac.th$"> -->
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "PhoneNo is required">
+						<input class="input100" type="tel" name="phoneno" placeholder="Phone Number" required pattern="[0-9]{10}">
+						<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn">
+							Sign Up
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+
+</form>
+
+</body>
+</html>

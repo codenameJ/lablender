@@ -1,0 +1,24 @@
+[Sun, 31 Mar 19 19:39:22 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`lend_equip`, CONSTRAINT `fk_Lend_Equip_students1` FOREIGN KEY (`Student_id`, `Student_Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE NO ACTION ON UPDATE NO )
+
+[Sun, 31 Mar 19 19:45:18 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`lend_equip`, CONSTRAINT `fk_Lend_Equip_students1` FOREIGN KEY (`Student_id`, `Student_Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE NO ACTION ON UPDATE NO )
+
+[Sun, 31 Mar 19 20:30:27 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`lend_equip`, CONSTRAINT `fk_Lend_Equip_students1` FOREIGN KEY (`Student_id`, `Student_Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE NO ACTION ON UPDATE NO )
+
+[Sun, 31 Mar 19 23:15:21 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:15:56 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:16:46 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:18:00 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:18:59 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:19:38 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:21:43 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:25:48 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Sun, 31 Mar 19 23:28:35 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`client`, CONSTRAINT `fk_student_client` FOREIGN KEY (`ID`, `Name`) REFERENCES `students` (`Student_id`, `Student_Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+

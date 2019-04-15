@@ -1,0 +1,4 @@
+[Wed, 21 Nov 18 00:08:51 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`borrowed_collection`, CONSTRAINT `fk_Borrowed_collection_External_Collection1` FOREIGN KEY (`Ex_Name`) REFERENCES `external_collection` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Wed, 21 Nov 18 00:11:52 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [borrowed_collection].* FROM [borrowed_collection] WHERE obj_id = '100000012' LIMIT :APL0:
+

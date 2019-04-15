@@ -1,0 +1,12 @@
+[Tue, 09 Apr 19 04:02:23 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '' LIMIT :APL0:
+
+[Tue, 09 Apr 19 04:02:29 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '' LIMIT :APL0:
+
+[Tue, 09 Apr 19 04:32:14 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '' LIMIT :APL0:
+
+[Tue, 09 Apr 19 04:37:03 +0700][ERROR] [0]: Column 'e_mail' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE e_mail = '' LIMIT :APL0:
+
+[Tue, 09 Apr 19 04:37:53 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`lablender`.`ta`, CONSTRAINT `fk_ta_client1` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+
+[Tue, 09 Apr 19 05:14:40 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`ta`, CONSTRAINT `fk_ta_Lab1` FOREIGN KEY (`Lab_id`) REFERENCES `lab` (`Lab_id`) ON DELETE CASCADE ON UPDATE CASCADE)
+

@@ -1,0 +1,16 @@
+[Thu, 13 Dec 18 05:28:50 +0700][ERROR] [22007]: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'Date_Died' at row 1
+
+[Thu, 13 Dec 18 06:10:59 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`art_object`, CONSTRAINT `fk_Art_Object_Artist1` FOREIGN KEY (`Artist_Name`) REFERENCES `artist` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE)
+
+[Thu, 13 Dec 18 06:24:44 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_id = '100000024' LIMIT :APL0:
+
+[Thu, 13 Dec 18 06:28:07 +0700][ERROR] [0]: Column 'obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_id = '100000024' LIMIT :APL0:
+
+[Thu, 13 Dec 18 06:32:08 +0700][ERROR] [0]: Column 'obj_Art_Object_obj_idid' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_Art_Object_obj_idid = '100000024' LIMIT :APL0:
+
+[Thu, 13 Dec 18 06:33:10 +0700][ERROR] [0]: Column 'obj_Art_Object_obj_idid' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_Art_Object_obj_idid = '100000024' LIMIT :APL0:
+
+[Thu, 13 Dec 18 06:34:35 +0700][ERROR] [0]: Column 'obj_Art_Object_obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_Art_Object_obj_id = '100000024' LIMIT :APL0:
+
+[Thu, 13 Dec 18 06:34:42 +0700][ERROR] [0]: Column 'obj_Art_Object_obj_id' doesn't belong to any of the selected models (1), when preparing: SELECT [other].* FROM [other] WHERE obj_Art_Object_obj_id = '100000024' LIMIT :APL0:
+

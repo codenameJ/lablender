@@ -1,0 +1,104 @@
+<?php echo $this->flashSession->output(); 
+ 
+ $Email='';
+ $Password='';
+ $rememberMe='';
+
+ if($this->cookies->has("Email") && $this->cookies->has("Password") )
+ {
+		 $Email=$this->cookies->get("Email");
+		 $Password=$this->cookies->get("Password");
+		 $rememberMe='checked';
+ }
+ ?>
+
+<!DOCTYPE html>  
+<html>
+
+
+<head>
+
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="icon" type="image/png" href="public/imag/login/icons/favicon.ico"/>
+
+    <?php echo $this->assets->outputCss('styleslogin'); ?>    
+		<?php echo $this->assets->outputJs('scriptslogin'); ?>
+		<?php echo $this->assets->outputCss('styles'); ?>    
+		<?php echo $this->assets->outputJs('scripts'); ?>  
+		<?php echo $this->getContent(); ?>	
+			
+</head>
+
+
+
+<!---------------------------------------------------------------------------------------------------------------->
+
+
+
+<body>
+
+	<form action="" method="post">
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-t-50 p-b-90">
+				<form class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-51">
+						Login
+					</span>
+
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+						<input class="input100" type="email" name="email" placeholder="E-Mail" value="<?php if(isset($Email))echo $Email; ?>">
+						<span class="focus-input100"></span>
+					</div>
+					
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password" value="<?php if(isset($Password))echo $Password; ?>">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="flex-sb-m w-full p-t-3 p-b-24">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="rememberMe"value="1" <?php echo $rememberMe;?>>
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							
+						<!-- link to signup page -->
+
+							<a href="<?php echo $this->url->getBaseUri(); ?>authen/signup" class="txt1">
+								Don't have an account? 
+							</a>
+
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<div id="dropDownSelect1"></div>
+
+</form>
+
+</body>
+</html>

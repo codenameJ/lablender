@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+  <title>Proflie</title>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <?php echo $this->getContent(); ?> 
+
+  </head>
+
+<!-- ------------------------------------------------------------------ -->
+
+
+<body>
+<div id="fh5co-page">
+<div id="fh5co-main">
+  <div class="fh5co-narrow-content">
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+      <img class="img-responsive" src="https://ogsocial.tvpoolonline.com/wp-content/uploads/2018/11/004-21.jpg">
+    </div>
+
+    <?php if($this->session->has('IsAdmin')) {?>
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+      <h2> Admin Profile </h2>
+
+    <?php }else{ ?>
+
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+      <h2> Student Profile </h2>
+
+    <?php } ?>
+
+
+      <?php if($this->session->has('IsAdmin')) {?>
+
+       <h2 class="fh5co-heading">ID: <?php echo $profile->client_id?> </h2>
+      
+      <h2 class="fh5co-heading"> Name:  <?php echo $profile->Name?> </h2>
+      
+      <h2 class="fh5co-heading"> E-Mail:  <?php echo $profile->Email?> </h2>
+      
+      <h2 class="fh5co-heading"> Phone Number:  <?php echo $profile->Phone?> </h2>
+
+      <?php }else{ ?>
+      <h2 class="fh5co-heading">Student ID: <?php echo $sentstd->Student_id?> </h2>
+      <h2 class="fh5co-heading">Name : <?php echo $profile->Name?> </h2>
+      <h2 class="fh5co-heading">E-Mail: <?php echo $profile->Email?> </h2>
+      <h2 class="fh5co-heading">Phone Number: <?php echo $profile->Phone?> </h2>
+      
+      <!-- <h2 class="fh5co-heading"> Name: </h2>
+      </p><input type="text" class="form-control" name="name" required value="<?php echo $profile->Name?>"></p>
+      
+      <h2 class="fh5co-heading"> E-Mail: </h2>
+      <p><input type="text" class="form-control" name="name" required value="<?php echo $profile->Email?>"></p>
+      
+      <h2 class="fh5co-heading"> Phone Number: </h2>
+      <p><input type="text" class="form-control" name="name" required value="<?php echo $profile->Phone?>"></p> -->
+      
+      <br><br><br><br><br>
+      <a href="<?php echo $this->url->getBaseUri().'profile/edit?id='.$profile->client_id?>" class="btn btn-primary">Edit Profile</a>
+    </div>
+
+    <?php } ?>
+
+  </div>
+</div>
+</div>
+
+
+     
+<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+     <br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+
+
+</body> 
+</html>

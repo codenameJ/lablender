@@ -1,0 +1,36 @@
+[Mon, 19 Nov 18 13:52:43 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 13:54:23 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 13:55:17 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:04:16 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:08:43 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:09:04 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:10:43 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:13:28 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:14:11 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:16:15 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:19:18 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 14:24:27 +0700][ERROR] [0]: Table 'client' doesn't exist in database when dumping meta-data for client
+
+[Mon, 19 Nov 18 23:01:18 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
+[Mon, 19 Nov 18 23:13:55 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
+[Mon, 19 Nov 18 23:15:09 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
+[Mon, 19 Nov 18 23:15:18 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
+[Mon, 19 Nov 18 23:18:03 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
+[Mon, 19 Nov 18 23:18:12 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mydb`.`enroll`, CONSTRAINT `fk_Students_has_Art_Class_Students1` FOREIGN KEY (`Students_Email`, `Students_ID`) REFERENCES `students` (`Cilent_Email`, `ID`) ON DELETE NO ACTION ON UPDATE NO AC)
+
