@@ -61,15 +61,33 @@
 
 
 <!-- --------------------------------------------------- -->
+<?php
+if($this->session->has('IsAdmin')){ ?>
+<div class="container-login100-form-btn m-t-32">
+            <a  class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>equip" role="button" >All Equip  |  </a>
+            <a  class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>equip/add" role="button" >Add Equip  |  </a>
+</div>
+<?php } ?>
 
-
+<!-- --------------------------------------------------- -->
 
           <!------------- equipments list table --------------------------->
           <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
           <form action="" method="post">
           <table id="myTable" class="table">
             <tr><h2 class="fh5co-heading" >Equipment Name</h2></tr>
-
+          <thead>
+          <tr>
+          <th data-field="eqname">Equip Name</th>
+          <th data-field="eqnum">Quantity</th>
+          <?php
+            if($this->session->has('IsAdmin')){ ?>
+            <th data-field="eqnum">Lab ID</th>
+            <?php }else{ ?>
+            <th data-field="lendnum">Select Lend Quantity</th>
+            <?php } ?>
+          </tr>
+          </thead>
             <!-- list column 1----------------- -->
 
             <?php  
@@ -77,11 +95,19 @@
             { ?>
 
             <tr>
-              <td><p class="fh5co-lead"><?php echo $row->Equip_id ?></p></td>
+              <!-- <td><p class="fh5co-lead"><?php echo $row->Equip_id ?></p></td> -->
               <td><p class="fh5co-lead"><?php echo $row->Equip_Name ?></p></td>
+              <td><p class="fh5co-lead"><?php echo $row->Equip_Num ?></p></td>
+              <td><p class="fh5co-lead"><?php echo $row->Lab_id ?></p></td>
+              <?php
+            if(!$this->session->has('IsAdmin')){ ?>
               <td>
-            <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1" max="<?php echo $row->Equipnum ?>"/>
+            <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1" max="<?php echo $row->Equip_Num ?>"/>
               <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id?>"> LENDED </a></td>
+            <?php }else{ ?>
+              <td><a href="<?php echo $this->url->getBaseUri().'equip/edit?eqid='.$row->Equip_id?>"> EDIT </a></td>
+              <td><a href="<?php echo $this->url->getBaseUri().'equip/delete?eqid='.$row->Equip_id?>"> DELETE </a></td>
+            <?php } ?>
             </tr>  
             </form>
             <?php } ?>

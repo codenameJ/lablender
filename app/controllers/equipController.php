@@ -39,6 +39,26 @@ class equipController extends ControllerBase {
 
     }else
     $this->response->redirect('page-top');
+}
 
+public function addAction(){
+
+  if($this->request->isPost()){
+
+    $eqid=trim($this->request->getPost('eqid'));
+    $eqname=trim($this->request->getPost('eqname'));
+    $eqnum=trim($this->request->getPost('eqnum'));
+    $labid=trim($this->request->getPost('labid'));
+
+    $equip=new equip();
+    $equip->Equip_id=$eqid;
+    $equip->Equip_Name=$eqname;
+    $equip->Equip_Num=$eqnum;
+    $equip->Lab_id=$labid;
+
+    $equip->save();
+
+    $this->response->redirect('equip');
+  }
 }
 }
