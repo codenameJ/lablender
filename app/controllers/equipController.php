@@ -61,4 +61,39 @@ public function addAction(){
     $this->response->redirect('equip');
   }
 }
+
+public function editAction(){
+
+  $geteqid=$this->request->get('eqid');
+  $editeq=equip::findFirst("Equip_id = '$geteqid'");
+  $this->view->sentediteq=$editeq;
+
+  if($this->request->isPost()){
+
+    $eqid=trim($this->request->getPost('eqid'));
+    $eqname=trim($this->request->getPost('eqname'));
+    $eqnum=trim($this->request->getPost('eqnum'));
+    $labid=trim($this->request->getPost('labid'));
+
+    $editeq->Equip_id=$eqid;
+    $editeq->Equip_Name=$eqname;
+    $editeq->Equip_Num=$eqnum;
+    $editeq->Lab_id=$labid;
+
+    $editeq->save();
+
+    $this->response->redirect('equip');
+  }
+}
+
+public function deleteAction(){
+
+  $geteqid=$this->request->get('eqid');
+  $delequip=equip::findFirst("Equip_id = '$geteqid'");
+  $delequip->delete();
+
+  $this->response->redirect('equip');
+  }
+
+
 }
