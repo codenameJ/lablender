@@ -38,6 +38,9 @@
 			<!-- <h2 class="fh5co-heading"> Student ID: </h2>
       <p><input type="text" class="form-control" name="stdid" required value="<?php echo $senteditstd->Student_id?>"></p>
        -->
+
+       <?php echo $this->flashSession->output(); ?>
+       
       <h2 class="fh5co-heading"> Name: </h2>
       </p><input type="text" class="form-control" name="name" required value="<?php echo $senteditstd->Student_Name?>"></p>
       

@@ -70,12 +70,12 @@ public function editAction(){
 
   if($this->request->isPost()){
 
-    $eqid=trim($this->request->getPost('eqid'));
+    // $eqid=trim($this->request->getPost('eqid'));
     $eqname=trim($this->request->getPost('eqname'));
     $eqnum=trim($this->request->getPost('eqnum'));
     $labid=trim($this->request->getPost('labid'));
 
-    $editeq->Equip_id=$eqid;
+    // $editeq->Equip_id=$eqid;
     $editeq->Equip_Name=$eqname;
     $editeq->Equip_Num=$eqnum;
     $editeq->Lab_id=$labid;

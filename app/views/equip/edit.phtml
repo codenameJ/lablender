@@ -1,6 +1,7 @@
 <!DOCTYPE html>  
 <html>
 
+<?php echo $this->flashSession->output(); ?>
 
 <head>
 
@@ -10,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-s
+
     <?php echo $this->assets->outputCss('styleslogin'); ?>    
     <?php echo $this->assets->outputJs('scriptslogin'); ?> 
 
@@ -57,8 +58,8 @@ s
 								
 								<!--  -->
 								<div class="mt-30">
-					<h2 class="about__title">Equip ID</h2>
-                  <input type="text" placeholder="Equip Id" name="eqid" class="about__subtitle" id="eqid" value="<?php echo $sentediteq->Equip_id?>" required ><br>
+					<h2 class="about__title">Equip ID : <?php echo $sentediteq->Equip_id?></h2>
+                  <!-- <input type="text" placeholder="Equip Id" name="eqid" class="about__subtitle" id="eqid" value="<?php echo $sentediteq->Equip_id?>" required ><br> -->
 
                   <h2 class="about__title">Equip Name</h2>
                   <input type="text" placeholder="Equip Name"  name="eqname" class="about__subtitle" id="eqname" value="<?php echo $sentediteq->Equip_Name?>" required ><br>

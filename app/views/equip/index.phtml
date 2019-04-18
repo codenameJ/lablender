@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>  
 <html>
-
+<?php echo $this->flashSession->output(); ?>
 <!-- show list of equipment -->
 
 
@@ -78,6 +78,10 @@ if($this->session->has('IsAdmin')){ ?>
             <tr><h2 class="fh5co-heading" >Equipment Name</h2></tr>
           <thead>
           <tr>
+          <?php
+            if($this->session->has('IsAdmin')){ ?>
+          <th data-field="eqname">Equip ID</th>
+          <?php } ?>
           <th data-field="eqname">Equip Name</th>
           <th data-field="eqnum">Quantity</th>
           <?php
@@ -95,7 +99,9 @@ if($this->session->has('IsAdmin')){ ?>
             { ?>
 
             <tr>
-              <!-- <td><p class="fh5co-lead"><?php echo $row->Equip_id ?></p></td> -->
+            <?php if($this->session->has('IsAdmin')){ ?>
+              <td><p class="fh5co-lead"><?php echo $row->Equip_id ?></p></td>
+            <?php } ?>
               <td><p class="fh5co-lead"><?php echo $row->Equip_Name ?></p></td>
               <td><p class="fh5co-lead"><?php echo $row->Equip_Num ?></p></td>
               <td><p class="fh5co-lead"><?php echo $row->Lab_id ?></p></td>

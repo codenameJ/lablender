@@ -2,6 +2,8 @@
 <!DOCTYPE html>  
 <html>
 
+<?php echo $this->flashSession->output(); ?>
+
 <!-- show list of equipment -->
 
 
@@ -115,7 +117,7 @@
               <td><p class="fh5co-lead"><?php echo $client->Email ?></p></td>
               <td><p class="fh5co-lead"><?php echo $client->Phone ?></p></td>
               <td><p class="fh5co-lead"><?php echo $client->Activation ?></p></td>
-              <td><a href="<?php echo $this->url->getBaseUri().'client/editstd?id='.$row->client_id?>"> eidt </a></td>
+              <td><a href="<?php echo $this->url->getBaseUri().'client/editstd?id='.$row->client_id?>"> edit </a></td>
               <td><a href="<?php echo $this->url->getBaseUri().'client/deletestd?id='.$row->client_id?>"> delete </a></td>
             </tr>
             </form>

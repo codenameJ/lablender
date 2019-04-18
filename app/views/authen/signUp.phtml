@@ -1,8 +1,5 @@
-<?php echo $this->flashSession->output(); 
- 
- ?>
- 
-<!DOCTYPE html>  
+
+ <!DOCTYPE html>  
 <html>
 
 <head>
@@ -37,7 +34,7 @@
 					<span class="login100-form-title p-b-51">
 						Sign Up
 					</span>
-
+					<?php echo $this->flashSession->output(); ?>
 					<input type="hidden"  name="id"  value="<?php echo $client->client_id;?>">
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Name is required">
 						<input class="input100" type="text" name="name" placeholder="Name" required>

@@ -2,11 +2,10 @@
 use Phalcon\Mvc\Model;
 class equip extends Model{
 
-    // public $IDEquip;
-    // public $EquipName;
-    // public $status;
-    // public $Equipnum;
-    // public $Lab_ID;
+    public $Equip_id;
+    public $Equip_Name;
+    public $Equip_Num;
+    public $Lab_id;
 
   public function inintialize()
   {

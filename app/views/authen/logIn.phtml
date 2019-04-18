@@ -1,5 +1,4 @@
-<?php echo $this->flashSession->output(); 
- 
+<?php 
  $Email='';
  $Password='';
  $rememberMe='';
@@ -51,8 +50,7 @@
 					<span class="login100-form-title p-b-51">
 						Login
 					</span>
-
-
+					<?php echo $this->flashSession->output(); ?> 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
 						<input class="input100" type="email" name="email" placeholder="E-Mail" value="<?php if(isset($Email))echo $Email; ?>">
 						<span class="focus-input100"></span>

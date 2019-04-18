@@ -35,6 +35,8 @@
 
       <h2 class="fh5co-heading">TA ID: <?php echo $senteditta->TA_id?> </h2>
       
+      <?php echo $this->flashSession->output(); ?>
+      
       <h2 class="fh5co-heading"> Name: </h2>
       </p><input type="text" class="form-control" name="name" required value="<?php echo $senteditta->TA_Name?>"></p>
       

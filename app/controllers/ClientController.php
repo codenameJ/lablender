@@ -1,4 +1,7 @@
 <?php
+use Phalcon\Mvc\View;
+use Phalcon\Http\Request;
+use Phalcon\Flash\Session as FlashSession;
  
 class ClientController extends ControllerBase {
 
@@ -34,6 +37,17 @@ class ClientController extends ControllerBase {
             $stdid=trim($this->request->getPost('studentid'));
             $tel=trim($this->request->getPost('tel'));
 
+            $checkid = students::findFirst("Student_id = '$stdid'");
+            $checkemail=client::findFirst("Email = '$email'");
+
+            if($checkemail){
+                $this->flashSession->error("E-Mail exist");
+              }else{
+                if($checkid){
+                  $this->flashSession->error("student id exist");
+                  }
+                  else{
+
             //client
       
             $member=new client();
@@ -58,7 +72,9 @@ class ClientController extends ControllerBase {
             $student->save();
 
             $this->response->redirect('client');
+            }
           }
+        }
 
     }
 
@@ -72,8 +88,13 @@ class ClientController extends ControllerBase {
             $tel=trim($this->request->getPost('tel'));
             $labid=trim($this->request->getPost('labid'));
 
+            $checkemail=client::findFirst("Email = '$email'");
+
             //client
       
+            if($checkemail){
+                $this->flashSession->error("E-Mail exist");
+            }else{
             $member=new client();
             $member->Email=$email;
             $member->Password=$this->security->hash($pass);
@@ -92,10 +113,11 @@ class ClientController extends ControllerBase {
             $ta->TA_Name=$name;
             $ta->Lab_id=$labid;
 
-            //save studnent
+            //save ta
             $ta->save();
 
             $this->response->redirect('client');
+            }
           }
 
     }
@@ -115,8 +137,14 @@ class ClientController extends ControllerBase {
             $editname=trim($this->request->getPost('name'));
             $editemail=trim($this->request->getPost('email'));
             $editphone=trim($this->request->getPost('phone'));
-            
 
+
+            $checkemail=client::findFirst("Email = '$email'");
+
+            if($checkemail){
+                $this->flashSession->error("E-Mail exist");
+            }else{
+            
             $editcli->Name=$editname;
             $editcli->Email=$editemail;
             $editcli->Phone=$editphone;
@@ -129,6 +157,7 @@ class ClientController extends ControllerBase {
             $editstd->save();
 
             $this->response->redirect('client/student');
+            }
         }
         
     }
@@ -148,7 +177,13 @@ class ClientController extends ControllerBase {
             $editemail=trim($this->request->getPost('email'));
             $editphone=trim($this->request->getPost('phone'));
             $editlab=trim($this->request->getPost('lab'));
-            
+
+            $checkemail=client::findFirst("Email = '$email'");
+
+            if($checkemail){
+                $this->flashSession->error("E-Mail exist");
+            }else{
+
 
             $editcli->Name=$editname;
             $editcli->Email=$editemail;
@@ -163,6 +198,7 @@ class ClientController extends ControllerBase {
       
 
             $this->response->redirect('client/ta');
+            }
         }
         
     }
