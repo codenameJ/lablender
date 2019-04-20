@@ -1,118 +1,59 @@
-<!DOCTYPE html>  
-<html>
-
-<!-- หน้านี้กดที่ชื่อ artist แล้วจะ link to artist_detail-->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
-		<title>Sculpture Collection</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Home</title>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
     
-	
-    <?php echo $this->assets->outputCss('styles'); ?>    
-    <?php echo $this->assets->outputJs('scripts'); ?> 
+  <?php echo $this->assets->outputCss('styles'); ?>    
+  <?php echo $this->assets->outputJs('scripts'); ?> 
 
-    
+
+  <?php echo $this->getContent(); ?> 
+
   </head>
 
-  <!------------------------------------------------------------------------------------------------------------------->
-
+<!-- ------------------------------------------------------------------ -->
+  
 <body>
 
-<div class="page-wrap" id="root">
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+    
 
-<!-- Content-->
-<div class="wil-content">
+<!-- ------------ content -------------------------------------------- -->
 
-      	<!-- Section -->
-          <section class="awe-section">
-					<div class="container">
+  <div id="fh5co-main">
+		<aside id="fh5co-hero" class="js-fullheight">
+			<div class="flexslider js-fullheight">
+        <ul class="slides">
+        <li style="background-image: url(images/bghome.jpg);">
+				   	<div class="overlay"></div>
+				   	<div class="container-fluid">
+				   		<div class="row">
+					   		<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+					   			<div class="slider-text-inner">
+					   				<h1> <strong> Lab Lender </strong> is a web appilcation that help you see and lend all equipments in laboratory</h1>
+					   				<h2>Before lending, you should login first or if you don't have an account click Sign Up </h2>
+										<p>
+                      <a class="btn btn-primary btn-demo popup-vimeo" href="<?php echo $this->url->getBaseUri(); ?>authen/login"> Sign In </a> 
+                      <a class="btn btn-primary btn-learn" href="<?php echo $this->url->getBaseUri(); ?>authen/signup"> Sign Up </a>
+                    </p>
+					   		  </div>
+					   	  </div>
+					    </div>
+				    </div>
+        </li>
 
-						
-						<!-- page-title -->
-						<div class="page-title pb-40">
-							<h2 class="page-title__title">Statue</h2>
-							<p class="page-title__text">Curabitur elementum urna augue, eu porta</p>
-							<div class="page-title__divider"></div>
-            </div><!-- End / page-title -->
-
-
-             <div class="container-login100-form-btn m-t-32">
-           
-           <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>catagory" class="btn" role="button">CATEGORY</a>
-           <?php if($this->session->has('IsAdmin')) {?>
-           <!-- <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>statue/add" class="btn" role="button">Add Statue</a> -->
-           <!-- <a class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>statue/statartist" class="btn" role="button">BROWSE BY ARTIST</a> -->
-           <?php } ?>
-       </div>
-
-       <br><br><br>
-
-<div class="container container-form">
-<div class="panel panel-primary"> 
-  <div class="panel-body">
-
-                     <table data-toggle="table">
-                          <thead>
-                               <tr>
-                               <th data-field="Name">Statue Name</th>
-                               <th data-field="Name"> Artist Name</th>
-                            
-                               </tr>  
-                          </thead> 
-
-                          <?php
-                          foreach($sentstuobj as $row)
-                          {
-                              $aobj=ArtObject::FindFirst("obj_id ='$row->Art_Object_obj_id'");
-                              $aobjat=Artist::FindFirst("Name ='$aobj->Artist_Name'");
-                          ?>
-                               <tr> 
-                                    <td> <a href="<?php echo $this->url->getBaseUri().'artobject/detail?obj_id='.$aobj->obj_id?>"> <?php echo $aobj->Title; ?></a> </td>  
-                                    <td> <a href="<?php echo $this->url->getBaseUri().'artist/detail?Name='.$aobjat->Name?>"><?php echo $aobjat->Name ?></a> </td>   
-                                    <?php if($this->session->has('IsAdmin')) {?>
-                                    <td><a href="<?php echo $this->url->getBaseUri().'statue/edit?obj_id='.$row->Art_Object_obj_id; ?>" class="btn navbar-btn">Edit</a></td>
-                                    <td><a href="<?php echo $this->url->getBaseUri().'statue/delete?obj_id='.$row->Art_Object_obj_id; ?>" class="btn navbar-btn">Delete</a></td>
-                                    <?php } ?>
-                               </tr>
-                               <?php
-                          }  
-                          ?>
-                     </table>
-
-                         </div>  
-                         </div>
-            </div>      
-        </div> 
-
-
-
-			<!-- footer -->
-			<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- End / footer -->
-
-
-        
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-                     
-                                    
-      </body>  
- </html>  
+    </aside>
+</div>
+</body> 
+</html>
