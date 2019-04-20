@@ -71,7 +71,7 @@ class ClientController extends ControllerBase {
             //save studnent
             $student->save();
 
-            $this->response->redirect('client');
+            $this->response->redirect('client/student');
             }
           }
         }
@@ -79,6 +79,9 @@ class ClientController extends ControllerBase {
     }
 
     public function addtaAction(){
+        
+        $lab=lab::find();
+        $this->view->sentlab=$lab;
 
         if($this->request->isPost()){
 
@@ -116,7 +119,7 @@ class ClientController extends ControllerBase {
             //save ta
             $ta->save();
 
-            $this->response->redirect('client');
+            $this->response->redirect('client/ta');
             }
           }
 
@@ -137,6 +140,7 @@ class ClientController extends ControllerBase {
             $editname=trim($this->request->getPost('name'));
             $editemail=trim($this->request->getPost('email'));
             $editphone=trim($this->request->getPost('phone'));
+            $editactivate=trim($this->request->getPost('activate'));
 
 
             $checkemail=client::findFirst("Email = '$email'");
@@ -148,6 +152,7 @@ class ClientController extends ControllerBase {
             $editcli->Name=$editname;
             $editcli->Email=$editemail;
             $editcli->Phone=$editphone;
+            $editcli->Activation=$editactivate;
       
             $editcli->save();
       
@@ -171,11 +176,15 @@ class ClientController extends ControllerBase {
         $editta=ta::findFirst("client_id = '$editcli->client_id'");
         $this->view->senteditta=$editta;
         
+        $lab=lab::find();
+        $this->view->sentlab=$lab;
+
         if($this->request->isPost()){
 
             $editname=trim($this->request->getPost('name'));
             $editemail=trim($this->request->getPost('email'));
             $editphone=trim($this->request->getPost('phone'));
+            $editactivate=trim($this->request->getPost('activate'));
             $editlab=trim($this->request->getPost('lab'));
 
             $checkemail=client::findFirst("Email = '$email'");
@@ -188,6 +197,7 @@ class ClientController extends ControllerBase {
             $editcli->Name=$editname;
             $editcli->Email=$editemail;
             $editcli->Phone=$editphone;
+            $editcli->Activation=$editactivate;
       
             $editcli->save();
       

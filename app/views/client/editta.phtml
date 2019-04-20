@@ -46,15 +46,33 @@
       <h2 class="fh5co-heading"> Phone Number: </h2>
       <p><input type="tel" class="form-control" name="phone" required value="<?php echo $editclient->Phone?>"></p>
 
+      <h2 class="fh5co-heading">Activation</h2>
+          <select type="text" name="activate" class="about__subtitle" id="activate">
+          <option value="<?php echo $editclient->Activation?>" selected="<?php echo $editclient->Activation?>">current status -<?php echo $editclient->Activation?></option>
+				  <option value="1" >No</option>
+    			<option value="2" >Yes</option>
+				  </select>
+
 			<h2 class="fh5co-heading"> Lab ID: </h2>
-      <p><input type="text" class="form-control" name="lab" required value="<?php echo $senteditta->Lab_id?>"></p>
-      
+      <select type="text" name="lab" class="about__subtitle" id="lab">
+				  <?php foreach($sentlab as $row){ ?>
+          <option value="<?php echo $row->Lab_id?>" selected="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> - <?php echo $row->Class_Name?> </option>
+          <?php } ?>
+				  </select>
+      <!-- <p><input type="text" class="form-control" name="lab" required value="<?php echo $senteditta->Lab_id?>"></p>
+       -->
       <br><br><br><br><br>
 
       <div class="container-login100-form-btn m-t-17">
 						<button class="login100-form-btn" type="submit">
-							edit
+							edit TA
 						</button>
+			</div>
+
+      <div class="container-login100-form-btn m-t-32">
+	    <button class="login100-form-btn" value="Go back!" onclick="history.back()">
+	        Back
+		  </button>
 			</div>
 
 		</div>

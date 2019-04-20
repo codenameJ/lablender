@@ -104,7 +104,8 @@
 
             <?php  
               foreach($sentclient as $row)
-            { ?>
+            { 
+            if($row->client_id != "0"){?>
 
             <tr>
               <td><p class="fh5co-lead"><?php echo $row->client_id ?></p></td>
@@ -115,7 +116,8 @@
               <td><a href="<?php echo $this->url->getBaseUri().'client/delete?id='.$row->client_id?>"> delete </a></td>
             </tr>
             </form>
-            <?php } ?>
+            <?php }
+          } ?>
 
             <!------------------------- end column 1 -->
 

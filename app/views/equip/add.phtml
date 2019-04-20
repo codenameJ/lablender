@@ -66,7 +66,12 @@
                   <input type="text" placeholder="Equip Quantity" name="eqnum" class="about__subtitle" id="eqnum" required ><br>
 
 									<h2 class="about__title">Lab ID</h2>
-                  <input type="text" placeholder="Lab ID" name="labid" class="about__subtitle" id="labid" required ><br>
+									<select type="text" name="labid" class="about__subtitle" id="labid">
+				  				<?php foreach($sentlab as $row){ ?>
+          				<option value="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> - <?php echo $row->Class_Name?> </option>
+          				<?php } ?>
+				  				</select>
+                  <!-- <input type="text" placeholder="Lab ID" name="labid" class="about__subtitle" id="labid" required ><br> -->
                   
                   <br>
                   <br>
@@ -78,7 +83,13 @@
 						        <button class="login100-form-btn" type="submit">
 							        Add Equip
 						        </button>
-					</div>
+									</div>
+
+									<div class="container-login100-form-btn m-t-32">
+						        <button class="login100-form-btn" value="Go back!" onclick="history.back()">
+							        Back
+						        </button>
+					        </div>
 
 
 					        </div>

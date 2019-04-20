@@ -89,4 +89,19 @@ class ControllerBase extends Controller{
    }
    }
   
+  public function checkStudent()
+  {
+  if(!$this->session->has('studentID')){ // ตรวจสอบว่ามี session การเข้าระบบ หรือไม่
+      $this->response->redirect('authen/login');
+      $this->session->remove('IsAdmin');
+    }
+  }
+
+  public function checkTa()
+  {
+	 if(!$this->session->has('taID')){ // ตรวจสอบว่ามี session การเข้าระบบ หรือไม่
+         $this->response->redirect('authen/login');
+         $this->session->remove('IsAdmin');
+   }
+   }
 }
