@@ -80,4 +80,13 @@ class ControllerBase extends Controller{
           $this->session->remove('IsAdmin');
       }
     }
+
+  public function checkId()
+  {
+	 if(!$this->session->has('memberID')){ // ตรวจสอบว่ามี session การเข้าระบบ หรือไม่
+         $this->response->redirect('authen/login');
+         $this->session->remove('IsAdmin');
+   }
+   }
+  
 }

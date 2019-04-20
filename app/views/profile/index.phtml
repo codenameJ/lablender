@@ -31,12 +31,16 @@
     <?php if($this->session->has('IsAdmin')) {?>
     <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
       <h2> Admin Profile </h2>
-
-    <?php }else{ ?>
-
+    <?php } ?>
+    
+    <?php if($this->session->has('studentID')) {?>
     <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
       <h2> Student Profile </h2>
+    <?php } ?>
 
+    <?php if($this->session->has('taID')) {?>
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+      <h2> TA Profile </h2>
     <?php } ?>
 
 
@@ -50,11 +54,23 @@
       
       <h2 class="fh5co-heading"> Phone Number:  <?php echo $profile->Phone?> </h2>
 
-      <?php }else{ ?>
+      <?php } ?>
+      
+      <?php if($this->session->has('studentID')){ ?>
       <h2 class="fh5co-heading">Student ID: <?php echo $sentstd->Student_id?> </h2>
       <h2 class="fh5co-heading">Name : <?php echo $profile->Name?> </h2>
       <h2 class="fh5co-heading">E-Mail: <?php echo $profile->Email?> </h2>
       <h2 class="fh5co-heading">Phone Number: <?php echo $profile->Phone?> </h2>
+
+      <?php } ?>
+
+      <?php if($this->session->has('taID')){ ?>
+      <h2 class="fh5co-heading">TA ID: <?php echo $sentta->TA_id?> </h2>
+      <h2 class="fh5co-heading">Name : <?php echo $profile->Name?> </h2>
+      <h2 class="fh5co-heading">E-Mail: <?php echo $profile->Email?> </h2>
+      <h2 class="fh5co-heading">Phone Number: <?php echo $profile->Phone?> </h2>
+
+      <?php } ?>
       
       <!-- <h2 class="fh5co-heading"> Name: </h2>
       </p><input type="text" class="form-control" name="name" required value="<?php echo $profile->Name?>"></p>
@@ -65,11 +81,12 @@
       <h2 class="fh5co-heading"> Phone Number: </h2>
       <p><input type="text" class="form-control" name="name" required value="<?php echo $profile->Phone?>"></p> -->
       
+      <?php if(!$this->session->has('IsAdmin')) {?>
       <br><br><br><br><br>
       <a href="<?php echo $this->url->getBaseUri().'profile/edit?id='.$profile->client_id?>" class="btn btn-primary">Edit Profile</a>
     </div>
-
     <?php } ?>
+
 
   </div>
 </div>

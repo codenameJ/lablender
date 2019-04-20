@@ -5,14 +5,19 @@ use Phalcon\Flash\Session as FlashSession;
 
 class AuthenController extends ControllerBase {
 
-
   public function indexAction(){
-    $this->CheckAuthen();
-    $member  = client::find();
-    $this->view->sentdata = $member;
+    $this->response->redirect('authen/login');
      }
 
   public function logInAction(){
+
+    if($this->session->has('memberID')){
+      $this->response->redirect('authen/notactivate');
+    }
+
+    if($this->session->has('memberAuthen')){
+      $this->response->redirect('profile');
+    }
 
     if($this->request->isPost()){
       $email=trim($this->request->getPost('email'));
@@ -20,6 +25,8 @@ class AuthenController extends ControllerBase {
       $rememberMe = $this->request->getPost('rememberMe'); // รับค่าจาก form
 
       $member=client::findFirst("Email = '$email'");
+      $student=students::findFirst("client_id ='$member->client_id'");
+      $ta=ta::findFirst("client_id = '$member->client_id'");
 
       if($member){
           if($this->security->checkHash($pass, $member->Password)){ // ตรวจสอบรหัสด้วย key การเข้ารหัส
@@ -29,15 +36,24 @@ class AuthenController extends ControllerBase {
               if($member->Email === "admin@lablender"){
               $this->session->set('memberAuthen', $member->Name);
               $this->session->set('memberEmail', $member->Email);
+              $this->session->set('memberID', $member->client_id);
               $this->session->set('IsAdmin','Admin');
               $this->response->redirect('admin');
               }
-              else{
-            $this->session->set('memberAuthen', $member->Name);
-            $this->session->set('memberEmail', $member->Email);
-            $this->session->set('memberID', $member->client_id);
-            $this->response->redirect('equip');
+              if($student){
+              $this->session->set('memberAuthen', $member->Name);
+              $this->session->set('memberEmail', $member->Email);
+              $this->session->set('memberID', $member->client_id);
+              $this->session->set('studentID', $student->Student_id);
+              $this->response->redirect('equip');
               }
+              if($ta){
+                  $this->session->set('memberAuthen', $member->Name);
+                  $this->session->set('memberEmail', $member->Email);
+                  $this->session->set('memberID', $member->client_id);
+                  $this->session->set('taID', $ta->TA_id);
+                  $this->response->redirect('profile');
+              }  
             }
             else{
             $this->session->set('memberID', $member->client_id);
@@ -69,6 +85,14 @@ class AuthenController extends ControllerBase {
 }
 
   public function signUpAction(){
+
+    if($this->session->has('memberID')){
+      $this->response->redirect('authen/notactivate');
+    }
+
+    if($this->session->has('memberAuthen')){
+      $this->response->redirect('profile');
+    }
     
     $sentmail = new Mail();
 
@@ -136,14 +160,21 @@ class AuthenController extends ControllerBase {
 
     $AcId=$this->request->get('id');
     $curclient=client::findFirst("client_id = '$AcId'");
+
+    if($AcId){
     
     $curclient->Activation = 'Yes';
     $curclient->save();
 
+    }else{
+      $this->response->redirect('authen/login');
+    }
 
   }
 
   public function notactivateAction(){
+
+    $this->checkid();
 
     $sentmail = new Mail();
 
@@ -170,7 +201,9 @@ class AuthenController extends ControllerBase {
     $this->session->remove('memberEmail');
     $this->session->remove('memberID');
     $this->session->remove('IsAdmin');
-	  $this->response->redirect('page-top'); 
+    $this->session->remove('studentID');
+    $this->session->remove('taID');
+	  $this->response->redirect('page-top');
   }
 
 }

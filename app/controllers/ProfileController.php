@@ -18,6 +18,9 @@ class ProfileController extends ControllerBase {
   $std=students::findFirst("client_id = '$mem->client_id'");
   $this->view->sentstd=$std;
 
+  $ta=ta::findFirst("client_id = '$mem->client_id'");
+  $this->view->sentta=$ta;
+
   }
 
   public function editAction(){
@@ -28,6 +31,9 @@ class ProfileController extends ControllerBase {
 
     $editstd=students::findFirst("client_id = '$editcli->client_id'");
     $this->view->sentstd=$editstd;
+
+    $editta=ta::findFirst("client_id = '$editcli->client_id'");
+    $this->view->sentta=$editta;
 
     if($this->request->isPost()){
 
@@ -41,9 +47,18 @@ class ProfileController extends ControllerBase {
 
       $editcli->save();
 
+      if($this->session->has('studentID')){
       $editstd->Student_Name=$editname;
 
       $editstd->save();
+
+      }
+
+      if($this->session->has('taID')){
+
+      $editta->TA_Name=$editname;
+      $editta->save();
+      }
 
       $this->response->redirect('profile');
 

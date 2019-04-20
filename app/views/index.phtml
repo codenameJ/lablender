@@ -39,8 +39,11 @@
           </li>
          
           <?php
+          if($this->session->has('memberID')){ ?>
+          
+          <?php
           if($this->session->has('memberAuthen')){ ?>
-
+          
           <?php
           if($this->session->has('IsAdmin')){ ?>
 
@@ -65,11 +68,18 @@
           <li>
             <a href="<?php echo $this->url->getBaseUri(); ?>lend">Lended</a>
           </li>
-          
+
           <li>
             <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
           </li>
 
+          <?php }else{ ?>
+
+            <li>
+            <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
+          </li>
+
+          <?php } ?>
 
           <?php }else{ ?>
 
