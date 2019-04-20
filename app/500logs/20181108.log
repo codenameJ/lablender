@@ -1,4 +1,0 @@
-[Thu, 08 Nov 18 03:56:13 +0700][ERROR] [0]: Column 'Students_Email' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE Students_Email = 'b@gmail.com' LIMIT :APL0:
-
-[Thu, 08 Nov 18 04:23:51 +0700][ERROR] [0]: Column 'Artist_Name' doesn't belong to any of the selected models (1), when preparing: SELECT [Artist].* FROM [Artist] WHERE Artist_Name = 'Mark Rothko' LIMIT :APL0:
-

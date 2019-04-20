@@ -1,8 +1,0 @@
-[Sun, 21 Apr 19 00:51:16 +0700][ERROR] [0]: Column 'client_id' doesn't belong to any of the selected models (1), when preparing: SELECT [students].* FROM [students] WHERE client_id ='' LIMIT :APL0:
-
-[Sun, 21 Apr 19 00:51:39 +0700][ERROR] [0]: Column 'client_id' doesn't belong to any of the selected models (1), when preparing: SELECT [students].* FROM [students] WHERE client_id ='' LIMIT :APL0:
-
-[Sun, 21 Apr 19 00:51:45 +0700][ERROR] [0]: Column 'client_id' doesn't belong to any of the selected models (1), when preparing: SELECT [students].* FROM [students] WHERE client_id ='' LIMIT :APL0:
-
-[Sun, 21 Apr 19 01:44:22 +0700][ERROR] [0]: Column 'client_id' doesn't belong to any of the selected models (1), when preparing: SELECT [students].* FROM [students] WHERE client_id ='' LIMIT :APL0:
-

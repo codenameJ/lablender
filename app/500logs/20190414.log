@@ -1,6 +1,0 @@
-[Sun, 14 Apr 19 10:39:24 +0700][ERROR] [0]: Column 'email' doesn't belong to any of the selected models (1), when preparing: SELECT COUNT(*) AS rowcount FROM [client] WHERE email IS NULL
-
-[Sun, 14 Apr 19 10:40:10 +0700][ERROR] [0]: Column 'email' doesn't belong to any of the selected models (1), when preparing: SELECT COUNT(*) AS rowcount FROM [client] WHERE email IS NULL
-
-[Sun, 14 Apr 19 10:43:15 +0700][ERROR] [0]: Column 'email' doesn't belong to any of the selected models (1), when preparing: SELECT COUNT(*) AS rowcount FROM [client] WHERE email IS NULL
-

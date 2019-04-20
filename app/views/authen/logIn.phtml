@@ -44,12 +44,10 @@
 	<div id="fh5co-main">
 		<div class="fh5co-narrow-content">
 			<div class="row row-bottom-padded-md">
-				<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-					<img class="img-responsive" src="https://images.pexels.com/photos/1010485/pexels-photo-1010485.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-				</div>
+				
 
 				<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-					<h1> Login </h1>
+					<h1 class="text-center"> Login </h1>
 
 					<br><br><br>
 
@@ -71,21 +69,29 @@
 						<label class="label-checkbox100" for="ckb1"> 
 								Remember me 
 						</label>
-	
-						<br>
 
-						<a href="<?php echo $this->url->getBaseUri(); ?>authen/signup" class="txt1">
-							Don't have an account?
-						</a>
+						<br>
 
 						<br><br>
 
-						<div class="form-group">
-						<button class="btn btn-primary">
+						
+
+
+						<div class="container-login100-form-btn m-t-17 text-center">
+						<button class="login100-form-btn">
 							Login
 						</button>
+
+						<div class="from-group text-cente">
+							<h3> If you don't have any account click 
+								<a href="<?php echo $this->url->getBaseUri(); ?>authen/signup" class="txt1">
+									Sign Up
+								</a> 
+							</h3>
+
+
 						</div>
-				
+					</div>
 
 						
 				</div>
