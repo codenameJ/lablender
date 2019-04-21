@@ -31,7 +31,7 @@
                 </div>
                 <form action="" method="post">
                     <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                        <h2> TA Profile </h2>
+                        <h2> StudentProfile </h2>
 
                         <h2 class="fh5co-heading">Client ID: <?php echo $editclient->client_id?> </h2>
 
@@ -54,6 +54,15 @@
                         <h2 class="fh5co-heading"> Phone Number: </h2>
                         <p><input type="tel" class="form-control" name="phone" required
                                 value="<?php echo $editclient->Phone?>"></p>
+
+                        <h2 class="fh5co-heading">Activation</h2>
+                        <select type="text" name="activate" class="about__subtitle" id="activate">
+                            <option value="<?php echo $editclient->Activation?>"
+                                selected="<?php echo $editclient->Activation?>">current status
+                                -<?php echo $editclient->Activation?></option>
+                            <option value="1">No</option>
+                            <option value="2">Yes</option>
+                        </select>
 
                         <br><br><br><br><br>
 

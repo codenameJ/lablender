@@ -1,115 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
 <head>
 
-    <title>Home</title>
+    <title>ADD TA</title>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
 
-    <link rel="icon" type="image/png" href="public/img/icons/favicon.ico" />
+    <?php echo $this->getContent(); ?>
 
 </head>
 
-
-<!---------------------------------------------------------------------------------------------------------------->
+<!-- ------------------------------------------------------------------ -->
 
 
 <body>
     <div id="fh5co-page">
-        <form action="" method="post">
-            <div class="fh5co-main">
-               
+        <div id="fh5co-main">
+            <div class="fh5co-narrow-content">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+										<br><br><br><br><br><br>
+										
+								<img class="img-responsive"
+                        src="https://cdn.pixabay.com/photo/2019/01/30/07/45/web-3963945_1280.jpg">
+                </div>
+                <form action="" method="post">
 
-                        <!-- page-title -->
-                        <div class="page-title pb-40">
-                            <h2 class="page-title__title">Add Member By Admin</h2>
+                    <?php echo $this->flashSession->output(); ?>
 
-                            <div class="page-title__divider"></div>
-                        </div><!-- End / page-title -->
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+												<h1><strong>Add Member</strong> : TA</h1>
+												
+												<br><br>
 
-                    </div>
-                </section>
-                <!-- End / Section -->
+                        <h2 class="fh5co-heading">E-Mail: </h2>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
+                            required></p>
 
+                        <h2 class="fh5co-heading">Password: </h2>
+                        <input type="password" class="form-control" id="psw" name="psw" placeholder="Enter Password"
+                            required></p>
 
-                <!-- Section -->
-                <section class="awe-section bg-gray">
-                    <div class="container">
-                        <div class="row">
-                            
-                            <div
-                                class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
+                        <h2 class="fh5co-heading">Name: </h2>
+                        <input type="text" class="form-control" id="fname" name="fname"
+                            placeholder="Enter Your First Name" required></p>
 
-                                <?php echo $this->flashSession->output(); ?>
-
-                                <!--  -->
-                                <form action="" method="post">
-                                    <div class="mt-30">
-                                        <h2 class="about__title">E-Mail:</h2>
-                                        <input type="email" placeholder="Enter Email" name="email"
-                                            class="about__subtitle" id="email" required><br>
-
-                                        <h2 class="about__title">Password:</h2>
-                                        <input type="password" placeholder="Enter Password" name="psw"
-                                            class="about__subtitle" id="psw" required><br>
-
-                                        <h2 class="about__title">Name:</h2>
-                                        <input type="text" placeholder="Enter Your First Name" name="fname"
-                                            class="about__subtitle" id="fname" required><br>
-
-                                        <h2 class="about__title">Phone Number:</h2>
-                                        <input type="text" placeholder="Enter Your Phone NUmber" name="tel"
-                                            class="about__subtitle" id="tel" required><br>
-
-                                        <h2 class="about__title">Lab ID:</h2>
-                                        <select type="text" name="labid" class="about__subtitle" id="labid">
-                                            <?php foreach($sentlab as $row){ ?>
-                                            <option value="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> -
-                                                <?php echo $row->Class_Name?> </option>
-                                            <?php } ?>
-                                        </select>
-                                        <!-- <input type="text" placeholder="Enter Your Lab id" name="labid" class="about__subtitle" id="labid" required ><br> -->
-
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <br>
-
-                                        <div class="container-login100-form-btn m-t-32">
-                                            <button class="login100-form-btn" type="submit">
-                                                Add TA
-                                            </button>
-                                        </div>
-
-                                        <div class="container-login100-form-btn m-t-32">
-                                            <button class="login100-form-btn" value="Go back!" onclick="history.back()">
-                                                Back
-                                            </button>
-                                        </div>
-
-                                </form>
-                            </div>
+                        <h2 class="fh5co-heading">Phone Number: </h2>
+                        <input type="text" class="form-control" id="tel" name="tel"
+                            placeholder="Enter Your Phone NUmber" required></p>
 
 
-                        </div><!-- End /  -->
+                        <h2 class="fh5co-heading"> Lab ID:</h2>
+                        <select type="text" name="labid" class="about__subtitle" id="labid">
+                            <?php foreach($sentlab as $row){ ?>
+                            <option value="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> -
+                                <?php echo $row->Class_Name?> </option>
+                            <?php } ?>
+                        </select>
+
+                        <br><br><br><br><br>
+
+                        <div class="container-login100-form-btn m-t-17">
+                            <button class="btn btn-primary btn-md" type="submit">
+                                Add TA
+														</button>
+														
+                            <button class="btn btn-primary btn-md" value="Go back!" onclick="history.back()">
+                                Back
+														</button>
+										
+                        </div>
 
                     </div>
+                </form>
             </div>
+
+
+        </div>
     </div>
-    </section>
-
-
-    </div>
-
-
-    </form>
     </div>
 
 
+
     <br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br>
@@ -119,6 +98,8 @@
     <br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br>
+
 
 </body>
+
 </html>

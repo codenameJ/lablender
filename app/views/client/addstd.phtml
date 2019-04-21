@@ -1,159 +1,102 @@
-<!DOCTYPE html>  
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 
 <head>
 
-<title>Home</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Add student</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
 
-s
-    <?php echo $this->assets->outputCss('styleslogin'); ?>    
-    <?php echo $this->assets->outputJs('scriptslogin'); ?> 
-
-    <link rel="icon" type="image/png" href="public/img/icons/favicon.ico"/>
+    <?php echo $this->getContent(); ?>
 
 </head>
 
-
-<!---------------------------------------------------------------------------------------------------------------->
+<!-- ------------------------------------------------------------------ -->
 
 
 <body>
+    <div id="fh5co-page">
+        <div id="fh5co-main">
+            <div class="fh5co-narrow-content">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+										<br><br><br><br><br><br>
+										
+								<img class="img-responsive"
+                        src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg">
+                </div>
+                <form action="" method="post">
+
+                    <?php echo $this->flashSession->output(); ?>
+
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+												<h1><strong>Add Member</strong> : Student</h1>
+												
+												<br><br>
+
+                        <h2 class="fh5co-heading">E-Mail: </h2>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email"
+                            required></p>
+
+                        <h2 class="fh5co-heading">Password: </h2>
+                        <input type="password" class="form-control" id="psw" name="psw" placeholder="Enter Password"
+                            required></p>
+
+                        <h2 class="fh5co-heading">Name: </h2>
+                        <input type="text" class="form-control" id="fname" name="fname"
+                            placeholder="Enter Your First Name" required></p>
+
+                        <h2 class="fh5co-heading">Phone Number: </h2>
+                        <input type="text" class="form-control" id="tel" name="tel"
+                            placeholder="Enter Your Phone NUmber" required></p>
 
 
-<div class="page-wrap" id="root">
-  <form action="" method="post">			
-   
-			<!-- Content-->
-			<div class="wil-content">
-				
-				<!-- Section -->
-				<section class="awe-section">
-					<div class="container">
-						
-						<!-- page-title -->
-						<div class="page-title pb-40">
-							<h2 class="page-title__title">Add Member By Admin</h2>
+												<h2 class="fh5co-heading"> Student ID:</h2>
+												<input type="text" class="form-control" id="studentid" name="studentid"
+												placeholder="Enter Your student id" required></p>
 
-							<div class="page-title__divider"></div>
-						</div><!-- End / page-title -->
-						
-					</div>
-				</section>
-				<!-- End / Section -->
-				
-				
-				<!-- Section -->
-				<section class="awe-section bg-gray">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-lg-5 "><img src="https://images.pexels.com/photos/797558/pexels-photo-797558.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb" alt="">
-							</div>
-							<div class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
-								
-							<?php echo $this->flashSession->output(); ?>
-							
-								<!--  -->
-								<form action="" method="post">
-								<div class="mt-30">
-									<h2 class="about__title">E-Mail:</h2>
-                  <input type="email" placeholder="Enter Email" name="email" class="about__subtitle" id="email" required ><br>
 
-                  <h2 class="about__title">Password:</h2>
-                  <input type="password" placeholder="Enter Password"  name="psw" class="about__subtitle" id="psw" required ><br>
+                        <br><br><br><br><br>
 
-                  <h2 class="about__title">Name:</h2>
-                  <input type="text" placeholder="Enter Your First Name" name="fname" class="about__subtitle" id="fname" required ><br>
+                        <div class="container-login100-form-btn m-t-17">
+                            <button class="btn btn-primary btn-md" type="submit">
+                                Add Student
+														</button>
+														
+                            <button class="btn btn-primary btn-md" value="Go back!" onclick="history.back()">
+                                Back
+														</button>
+										
+                        </div>
 
-                  <h2 class="about__title">Student ID:</h2>
-                  <input type="text" placeholder="Enter Your student id" name="studentid" class="about__subtitle" id="studentid" required ><br>
+                    </div>
+                </form>
+            </div>
 
-                  <h2 class="about__title">Phone Number:</h2>
-                  <input type="text" placeholder="Enter Your Phone NUmber" name="tel" class="about__subtitle" id="tel" required ><br>
-                  
-                  <br>
-                  <br>
-                  <br>
-                  <br>
 
-                  <div class="container-login100-form-btn m-t-32">
-						        <button class="login100-form-btn" type="submit">
-							        Add Student
-						        </button>
-					        </div>
-
-									<div class="container-login100-form-btn m-t-32">
-						        <button class="login100-form-btn" value="Go back!" onclick="history.back()">
-							        Back
-						        </button>
-					        </div>
-
-									</form>
-					        </div>
-
-									
-								</div><!-- End /  -->
-								
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- End / Section -->
-	</form>			
-			</div>
-			<!-- End / Content-->
-      
-      
-      
-
-			<!-- footer -->
-			<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- End / footer -->
-			
+        </div>
+    </div>
     </div>
 
 
 
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
-
-
-</form>
-
-
-
-<!-- footer -->
-<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- End / footer -->
-
-
-        
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
 
 </body>
+
 </html>
