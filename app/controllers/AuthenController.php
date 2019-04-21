@@ -158,6 +158,10 @@ class AuthenController extends ControllerBase {
 
   public function activateAction(){
 
+    if($this->session->has('memberAuthen')){
+      $this->response->redirect('profile');
+    }
+
     $AcId=$this->request->get('id');
     $curclient=client::findFirst("client_id = '$AcId'");
 
@@ -173,6 +177,10 @@ class AuthenController extends ControllerBase {
   }
 
   public function notactivateAction(){
+
+    if($this->session->has('memberAuthen')){
+      $this->response->redirect('profile');
+    }
 
     $this->checkid();
 

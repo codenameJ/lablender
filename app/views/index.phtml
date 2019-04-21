@@ -104,6 +104,7 @@
 
         <!-- ------------ content -------------------------------------------- -->
 
+
         <div id="fh5co-main">
             <aside id="fh5co-hero" class="js-fullheight">
                 <div class="flexslider js-fullheight">
@@ -116,6 +117,8 @@
                                         <div class="slider-text-inner">
                                             <h1> <strong> Lab Lender </strong> is a web appilcation that help you see
                                                 and lend all equipments in laboratory</h1>
+
+                                            <?php if(!$this->session->has('memberAuthen')){ ?>
                                             <h2>Before lending, you should login first or if you don't have an account
                                                 click Sign Up </h2>
 
@@ -125,7 +128,7 @@
 
                                             <!-- <h2>You already login. Now you can see and lend all of equipments in laboratory</h2> -->
 
-
+                                            
                                             <!-- if already login hide both button -->
                                             <p>
                                                 <a class="btn btn-primary btn-demo popup-vimeo"
@@ -136,7 +139,7 @@
                                                 </a>
                                             </p>
 
-
+                                            <?php } ?>
                                             
                                         </div>
                                     </div>
@@ -146,6 +149,8 @@
 
             </aside>
         </div>
+
+        
 </body>
 
 </html>
