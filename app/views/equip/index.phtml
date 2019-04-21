@@ -1,3 +1,4 @@
+<?php echo $totalItems;?>
 <!DOCTYPE html>
 <html>
 <!-- show list of equipment -->
@@ -77,6 +78,7 @@
 
                 <!-- --------------------------------------------------- -->
 
+
                 <!------------- equipments list table --------------------------->
                 <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
                 <form action="" method="post">
@@ -127,8 +129,9 @@
                             <td>
                                 <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1"
                                     max="<?php echo $row->Equip_Num ?>" />
-                            <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id?>">
+                            <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id.'?eqnum'?>">
                                     LENDED </a></td>
+                                    <!-- <td><button id="addeq" name="addeq" type="button" value="<?php echo $row->Equip_id?>"> LENDED </button></td> -->
                             <?php }else{ ?>
                             <td><a href="<?php echo $this->url->getBaseUri().'equip/edit?eqid='.$row->Equip_id?>"> EDIT
                                 </a></td>
@@ -138,6 +141,27 @@
                         </tr>
                 </form>
                 <?php } ?>
+
+                <script>
+$(".bth,.addeq").click(function() {
+	var total = parseInt($('#cart').text());
+	var i=$(this).val();
+	$('#cart').text(total);
+	$.ajax({
+	  type: "POST",
+	  url: "<?php echo $this->url->getBaseUri()?>" + "equip/len",
+	  data: "eqid=" + i,
+	  dataType: "html",
+	  success: function() {
+		  total=total+1;
+		  $('#cart').text(total);
+	  },
+	  error: function() {
+		  alert("problem communicating with the server");
+	  }
+	});
+});
+</script>
 
                 <!------------------------- end column 1 -->
 

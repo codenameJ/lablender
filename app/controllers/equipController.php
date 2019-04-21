@@ -8,8 +8,22 @@ class equipController extends ControllerBase {
 	 	
 
   public function indexAction(){
-    $equip  = equip::find();
+
+
+    if ($this->session->has('cart')) {
+      $cart = $this->session->get('cart');
+      $totalQty=0;
+      foreach ($cart as $equip => $qty) {
+        $totalQty = $totalQty + $qty;
+      }
+      $this->view->totalItems=$totalQty;
+    }
+    else {
+      $this->view->totalItems=0;
+    }
+    $equip = equip::find();
     $this->view->sentdata = $equip;
+
   }
   
   public function lendAction(){
@@ -17,28 +31,24 @@ class equipController extends ControllerBase {
     $seleq=$this->request->get('eqid');
     $eq=equip::findFirst("Equip_id = '$seleq'");
 
-    $idstd=$this->session->get('memberID');
-    $std=client::findFirst("ID = '$idstd'");
 
+    $qty=$this->request->get('eqnum');
 
-    if($this->request->isPost()){
-
-      $seleq=$this->request->get('eqid');
-      $eq=equip::findFirst("Equip_id = '$seleq'");
+    if ($this->session->has('cart')) {
+      $cart = $this->session->get('cart');
+      if (isset($cart[$seleq])) {
+        $cart[$seleq]=$cart[$seleq]+1; //add one to product in cart
+      }
+      else {
+        $cart[$seleq]=$qty; //new product in cart
+      }
+    }
+    else {
+      $cart[$seleq]=$qty; //new cart
+    }
+    $this->session->set('cart',$cart); // make the cart a session variable
+    $this->response->redirect('equip');
   
-      $idstd=$this->session->get('memberID');
-      $std=client::findFirst("ID = '$idstd'");
-
-      $lendeq=new lend_equip();
-
-      $lendeq->Student_id=$idstd;
-      $lendeq->Student_Name=$std->Name;
-      $lendeq->Equip_id=$seleq;
-
-      $lendeq->save();
-
-    }else
-    $this->response->redirect('page-top');
 }
 
 public function addAction(){
