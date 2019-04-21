@@ -3,130 +3,149 @@
 
 <head>
 
-  <title>Home</title>
-  <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
-    
-  <?php echo $this->assets->outputCss('styles'); ?>    
-  <?php echo $this->assets->outputJs('scripts'); ?> 
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <?php echo $this->assets->outputCss('styles'); ?>
+    <?php echo $this->assets->outputJs('scripts'); ?>
 
 
-  <?php echo $this->getContent(); ?> 
+    <?php echo $this->getContent(); ?>
 
-  </head>
+</head>
 
-<!-- ------------------------------xxxxxxxxx------------------------------------ -->
-  
+<!-- ------------------------------------------------------------------ -->
+
 <body>
 
-	<div id="fh5co-page">
-		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+    <div id="fh5co-page">
+        <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+        <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-<!-------------------- nav bar ----------------------------------------- -->
-    
-    <h1 id="fh5co-logo"><a href="index.html">LAB LENDER</a></h1>
-			<nav id="fh5co-main-menu" role="navigation">
-				<ul>
+            <!-------------------- nav bar ----------------------------------------- -->
 
-          <li class="fh5co-active">
-            <a href="<?php echo $this->url->getBaseUri(); ?>#home">Home</a>
-          </li>
-         
-          <?php
+            <h1 id="fh5co-logo"><a href="index.html">LAB LENDER</a></h1>
+            <nav id="fh5co-main-menu" role="navigation">
+                <ul>
+
+                    <li class="fh5co-active">
+                        <a href="<?php echo $this->url->getBaseUri(); ?>home">Home</a>
+                    </li>
+
+                    <?php
           if($this->session->has('memberID')){ ?>
-          
-          <?php
+
+                    <?php
           if($this->session->has('memberAuthen')){ ?>
-          
-          <?php
+
+                    <?php
           if($this->session->has('IsAdmin')){ ?>
 
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>client">Client</a>
-          </li>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>client">Client</a>
+                    </li>
 
-          <?php } ?>
+                    <?php } ?>
 
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>equip">Lab Logic</a>
-          </li>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>equip">Lab Logic</a>
+                    </li>
 
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>profile">
-                     <?php echo $this->session->get('memberAuthen');?></a>
-          </li>
-          
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>history">History</a></li>
-          
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>lend">Lended</a>
-          </li>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>profile">
+                            <?php echo $this->session->get('memberAuthen');?></a>
+                    </li>
 
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
-          </li>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>history">History</a></li>
 
-          <?php }else{ ?>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>lend">Lended</a>
+                    </li>
 
-            <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
-          </li>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
+                    </li>
 
-          <?php } ?>
+                    <?php }else{ ?>
 
-          <?php }else{ ?>
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
+                    </li>
 
+                    <?php } ?>
 
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>authen/login">Sign In</a>
-          </li>
-        
-          <li>
-            <a href="<?php echo $this->url->getBaseUri(); ?>authen/signup">Sign Up</a>
-          </li>
-
-          <?php } ?>
+                    <?php }else{ ?>
 
 
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>authen/login">Sign In</a>
+                    </li>
 
-				</ul>
-      </nav>
-      </aside>
-      
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>authen/signup">Sign Up</a>
+                    </li>
 
-<!-- ------------ content -------------------------------------------- -->
+                    <?php } ?>
 
-  <div id="fh5co-main">
-		<aside id="fh5co-hero" class="js-fullheight">
-			<div class="flexslider js-fullheight">
-        <ul class="slides">
-        <li style="background-image: url(images/bghome.jpg);">
-				   	<div class="overlay"></div>
-				   	<div class="container-fluid">
-				   		<div class="row">
-					   		<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
-					   			<div class="slider-text-inner">
-					   				<h1> <strong> Lab Lender </strong> is a web appilcation that help you see and lend all equipments in laboratory</h1>
-					   				<h2>Before lending, you should login first or if you don't have an account click Sign Up </h2>
-										<p>
-                      <a class="btn btn-primary btn-demo popup-vimeo" href="<?php echo $this->url->getBaseUri(); ?>authen/login"> Sign In </a> 
-                      <a class="btn btn-primary btn-learn" href="<?php echo $this->url->getBaseUri(); ?>authen/signup"> Sign Up </a>
-                      Test
-                    </p>
-					   		  </div>
-					   	  </div>
-					    </div>
-				    </div>
-        </li>
 
-    </aside>
-</div>
-</body> 
+
+                </ul>
+            </nav>
+        </aside>
+
+
+        <!-- ------------ content -------------------------------------------- -->
+
+        <div id="fh5co-main">
+            <aside id="fh5co-hero" class="js-fullheight">
+                <div class="flexslider js-fullheight">
+                    <ul class="slides">
+                        <li style="background-image: url(images/bghome.jpg);">
+                            <div class="overlay"></div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                                        <div class="slider-text-inner">
+                                            <h1> <strong> Lab Lender </strong> is a web appilcation that help you see
+                                                and lend all equipments in laboratory</h1>
+                                            <h2>Before lending, you should login first or if you don't have an account
+                                                click Sign Up </h2>
+
+
+
+                                            <!-- if already login show text  -->
+
+                                            <!-- <h2>You already login. Now you can see and lend all of equipments in laboratory</h2> -->
+
+
+                                            <!-- if already login hide both button -->
+                                            <p>
+                                                <a class="btn btn-primary btn-demo popup-vimeo"
+                                                    href="<?php echo $this->url->getBaseUri(); ?>authen/login"> Sign In
+                                                </a>
+                                                <a class="btn btn-primary btn-learn"
+                                                    href="<?php echo $this->url->getBaseUri(); ?>authen/signup"> Sign Up
+                                                </a>
+                                            </p>
+
+
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+            </aside>
+        </div>
+</body>
+
 </html>

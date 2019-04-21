@@ -1,20 +1,16 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
 
 
 <head>
 
-<title>Home</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-s
-    <?php echo $this->assets->outputCss('styleslogin'); ?>    
-    <?php echo $this->assets->outputJs('scriptslogin'); ?> 
-
-    <link rel="icon" type="image/png" href="public/img/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="public/img/icons/favicon.ico" />
 
 </head>
 
@@ -23,142 +19,106 @@ s
 
 
 <body>
+    <div id="fh5co-page">
+        <form action="" method="post">
+            <div class="fh5co-main">
+               
+
+                        <!-- page-title -->
+                        <div class="page-title pb-40">
+                            <h2 class="page-title__title">Add Member By Admin</h2>
+
+                            <div class="page-title__divider"></div>
+                        </div><!-- End / page-title -->
+
+                    </div>
+                </section>
+                <!-- End / Section -->
 
 
-<div class="page-wrap" id="root">
-  <form action="" method="post">			
-   
-			<!-- Content-->
-			<div class="wil-content">
-				
-				<!-- Section -->
-				<section class="awe-section">
-					<div class="container">
-						
-						<!-- page-title -->
-						<div class="page-title pb-40">
-							<h2 class="page-title__title">Add Member By Admin</h2>
+                <!-- Section -->
+                <section class="awe-section bg-gray">
+                    <div class="container">
+                        <div class="row">
+                            
+                            <div
+                                class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
 
-							<div class="page-title__divider"></div>
-						</div><!-- End / page-title -->
-						
-					</div>
-				</section>
-				<!-- End / Section -->
-				
-				
-				<!-- Section -->
-				<section class="awe-section bg-gray">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6 col-lg-5 "><img src="https://images.pexels.com/photos/797558/pexels-photo-797558.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb" alt="">
-							</div>
-							<div class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
-								
-							<?php echo $this->flashSession->output(); ?>
+                                <?php echo $this->flashSession->output(); ?>
 
-								<!--  -->
-								<form action="" method="post">
-								<div class="mt-30">
-									<h2 class="about__title">E-Mail:</h2>
-                  <input type="email" placeholder="Enter Email" name="email" class="about__subtitle" id="email" required ><br>
+                                <!--  -->
+                                <form action="" method="post">
+                                    <div class="mt-30">
+                                        <h2 class="about__title">E-Mail:</h2>
+                                        <input type="email" placeholder="Enter Email" name="email"
+                                            class="about__subtitle" id="email" required><br>
 
-                  <h2 class="about__title">Password:</h2>
-                  <input type="password" placeholder="Enter Password"  name="psw" class="about__subtitle" id="psw" required ><br>
+                                        <h2 class="about__title">Password:</h2>
+                                        <input type="password" placeholder="Enter Password" name="psw"
+                                            class="about__subtitle" id="psw" required><br>
 
-                  <h2 class="about__title">Name:</h2>
-                  <input type="text" placeholder="Enter Your First Name" name="fname" class="about__subtitle" id="fname" required ><br>
+                                        <h2 class="about__title">Name:</h2>
+                                        <input type="text" placeholder="Enter Your First Name" name="fname"
+                                            class="about__subtitle" id="fname" required><br>
 
-                  <h2 class="about__title">Phone Number:</h2>
-                  <input type="text" placeholder="Enter Your Phone NUmber" name="tel" class="about__subtitle" id="tel" required ><br>
-                  
-									<h2 class="about__title">Lab ID:</h2>
-									<select type="text" name="labid" class="about__subtitle" id="labid">
-				  				<?php foreach($sentlab as $row){ ?>
-          				<option value="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> - <?php echo $row->Class_Name?> </option>
-          				<?php } ?>
-				  				</select>
-                  <!-- <input type="text" placeholder="Enter Your Lab id" name="labid" class="about__subtitle" id="labid" required ><br> -->
+                                        <h2 class="about__title">Phone Number:</h2>
+                                        <input type="text" placeholder="Enter Your Phone NUmber" name="tel"
+                                            class="about__subtitle" id="tel" required><br>
 
-                  <br>
-                  <br>
-                  <br>
-                  <br>
+                                        <h2 class="about__title">Lab ID:</h2>
+                                        <select type="text" name="labid" class="about__subtitle" id="labid">
+                                            <?php foreach($sentlab as $row){ ?>
+                                            <option value="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> -
+                                                <?php echo $row->Class_Name?> </option>
+                                            <?php } ?>
+                                        </select>
+                                        <!-- <input type="text" placeholder="Enter Your Lab id" name="labid" class="about__subtitle" id="labid" required ><br> -->
 
-                  <div class="container-login100-form-btn m-t-32">
-						        <button class="login100-form-btn" type="submit">
-							        Add TA
-						        </button>
-					        </div>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <br>
 
-									<div class="container-login100-form-btn m-t-32">
-						        <button class="login100-form-btn" value="Go back!" onclick="history.back()">
-							        Back
-						        </button>
-					        </div>
+                                        <div class="container-login100-form-btn m-t-32">
+                                            <button class="login100-form-btn" type="submit">
+                                                Add TA
+                                            </button>
+                                        </div>
 
-									</form>
-					        </div>
+                                        <div class="container-login100-form-btn m-t-32">
+                                            <button class="login100-form-btn" value="Go back!" onclick="history.back()">
+                                                Back
+                                            </button>
+                                        </div>
 
-									
-								</div><!-- End /  -->
-								
-							</div>
-						</div>
-					</div>
-				</section>
-				<!-- End / Section -->
-	</form>			
-			</div>
-			<!-- End / Content-->
-      
-      
-      
+                                </form>
+                            </div>
 
-			<!-- footer -->
-			<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- End / footer -->
-			
+
+                        </div><!-- End /  -->
+
+                    </div>
+            </div>
+    </div>
+    </section>
+
+
     </div>
 
 
+    </form>
+    </div>
 
 
-
-
-</form>
-
-
-
-<!-- footer -->
-<div class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-6 ">
-							<p class="footer__coppy">2018 &copy; Copyright <a href="http://awe7.com/">Awe7</a>. All rights Reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- End / footer -->
-
-
-        
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
-			  <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
 </body>
 </html>

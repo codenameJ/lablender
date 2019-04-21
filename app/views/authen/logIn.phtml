@@ -11,26 +11,25 @@
  }
  ?>
 
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
 
 
 <head>
 
-<title>Login</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-<link rel="icon" type="image/png" href="public/imag/login/icons/favicon.ico"/>
+    <link rel="icon" type="image/png" href="public/imag/login/icons/favicon.ico" />
 
-    <?php echo $this->assets->outputCss('styleslogin'); ?>    
-		<?php echo $this->assets->outputJs('scriptslogin'); ?>
-		<?php echo $this->assets->outputCss('styles'); ?>    
-		<?php echo $this->assets->outputJs('scripts'); ?>  
-		<?php echo $this->getContent(); ?>	
-			
+
+    <?php echo $this->assets->outputCss('styles'); ?>
+    <?php echo $this->assets->outputJs('scripts'); ?>
+    <?php echo $this->getContent(); ?>
+
 </head>
 
 
@@ -40,63 +39,69 @@
 
 
 <body>
+    <form action="" method="post">
+        <div id="fh5co-page">
+            <div id="fh5co-main">
 
-	<form action="" method="post">
+                <div class="col-md-6 col-md-offset-3 text-center js-fullheight slider-text">
 
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
-						Login
-					</span>
-					<?php echo $this->flashSession->output(); ?> 
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-						<input class="input100" type="email" name="email" placeholder="E-Mail" value="<?php if(isset($Email))echo $Email; ?>">
-						<span class="focus-input100"></span>
-					</div>
-					
-					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password" value="<?php if(isset($Password))echo $Password; ?>">
-						<span class="focus-input100"></span>
-					</div>
-					
-					<div class="flex-sb-m w-full p-t-3 p-b-24">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" id="ckb1" type="checkbox" name="rememberMe"value="1" <?php echo $rememberMe;?>>
-							<label class="label-checkbox100" for="ckb1">
-								Remember me
-							</label>
-						</div>
+                    <br><br><br>
 
-						<div>
-							
-						<!-- link to signup page -->
+										<h1> <strong> Login </strong> </h1>
+										
 
-							<a href="<?php echo $this->url->getBaseUri(); ?>authen/signup" class="txt1">
-								Don't have an account? 
-							</a>
+                    <br>
 
-						</div>
-					</div>
+                    <?php echo $this->flashSession->output(); ?>
 
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
+                        <input class="input100" type="email" name="email" placeholder="E-Mail"
+                            value="<?php if(isset($Email))echo $Email; ?>">
+                        <span class="focus-input100"></span>
+                    </div>
 
-				</form>
-			</div>
-		</div>
-	</div>
-	
-	
+                    <br>
 
-	<div id="dropDownSelect1"></div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Password"
+                            value="<?php if(isset($Password))echo $Password; ?>">
+                        <span class="focus-input100"></span>
+                    </div>
 
-</form>
+                    <br><br>
+
+                    <div class="container-login100-form-btn m-t-17">
+                        <button class="login100-form-btn">
+                            Login
+                        </button>
+
+                        <br><br>
+
+                        <h3>
+                            If you don't have any account click
+                            <a href="<?php echo $this->url->getBaseUri(); ?>authen/signup" class="txt1">
+                                <strong> Sign Up </strong>
+                            </a>
+                        </h3>
+
+                    </div>
+
+                    <!-- <div class="col-md-6 col-md-offset-2 ">
+                    <div class="contact100-form-checkbox">
+                        <input class="input-checkbox100" id="ckb1" type="checkbox" name="rememberMe" value="1"
+                            <?php echo $rememberMe;?>>
+                        <label class="label-checkbox100" for="ckb1">
+                            Remember me
+                        </label>
+                    </div>
+                </div> -->
+
+                </div>
+
+            </div>
+        </div>
+    </form>
 
 </body>
+
 </html>

@@ -1,0 +1,2 @@
+[Sun, 21 Apr 19 17:14:38 +0700][ERROR] [0]: Column 'ID' doesn't belong to any of the selected models (1), when preparing: SELECT [client].* FROM [client] WHERE ID = '38' LIMIT :APL0:
+

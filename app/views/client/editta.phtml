@@ -4,98 +4,104 @@
 
 <head>
 
-  <title>Edit Proflie</title>
-  <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
+    <title>Edit Proflie</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
 
-  <?php echo $this->getContent(); ?> 
+    <?php echo $this->getContent(); ?>
 
-  </head>
+</head>
 
 <!-- ------------------------------------------------------------------ -->
 
 
 <body>
-<div id="fh5co-page">
-<div id="fh5co-main">
-  <div class="fh5co-narrow-content">
-    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-      <img class="img-responsive" src="https://ogsocial.tvpoolonline.com/wp-content/uploads/2018/11/004-21.jpg">
-    </div>
-<form action="" method="post">
-    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-      <h2> TA Profile </h2>
+    <div id="fh5co-page">
+        <div id="fh5co-main">
+            <div class="fh5co-narrow-content">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <img class="img-responsive"
+                        src="https://ogsocial.tvpoolonline.com/wp-content/uploads/2018/11/004-21.jpg">
+                </div>
+                <form action="" method="post">
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <h2> TA Profile </h2>
 
-			<h2 class="fh5co-heading">Client ID: <?php echo $editclient->client_id?> </h2>
+                        <h2 class="fh5co-heading">Client ID: <?php echo $editclient->client_id?> </h2>
 
-      <h2 class="fh5co-heading">TA ID: <?php echo $senteditta->TA_id?> </h2>
-      
-      <?php echo $this->flashSession->output(); ?>
-      
-      <h2 class="fh5co-heading"> Name: </h2>
-      </p><input type="text" class="form-control" name="name" required value="<?php echo $senteditta->TA_Name?>"></p>
-      
-      <h2 class="fh5co-heading"> E-Mail: </h2>
-      <p><input type="email" class="form-control" name="email" required value="<?php echo $editclient->Email?>"></p>
-      
-      <h2 class="fh5co-heading"> Phone Number: </h2>
-      <p><input type="tel" class="form-control" name="phone" required value="<?php echo $editclient->Phone?>"></p>
+                        <h2 class="fh5co-heading">TA ID: <?php echo $senteditta->TA_id?> </h2>
 
-      <h2 class="fh5co-heading">Activation</h2>
-          <select type="text" name="activate" class="about__subtitle" id="activate">
-          <option value="<?php echo $editclient->Activation?>" selected="<?php echo $editclient->Activation?>">current status -<?php echo $editclient->Activation?></option>
-				  <option value="1" >No</option>
-    			<option value="2" >Yes</option>
-				  </select>
+                        <?php echo $this->flashSession->output(); ?>
 
-			<h2 class="fh5co-heading"> Lab ID: </h2>
-      <select type="text" name="lab" class="about__subtitle" id="lab">
-				  <?php foreach($sentlab as $row){ ?>
-          <option value="<?php echo $row->Lab_id?>" selected="<?php echo $row->Lab_id?>"><?php echo $row->Lab_id?> - <?php echo $row->Class_Name?> </option>
-          <?php } ?>
-				  </select>
-      <!-- <p><input type="text" class="form-control" name="lab" required value="<?php echo $senteditta->Lab_id?>"></p>
+                        <h2 class="fh5co-heading"> Name: </h2>
+                        </p><input type="text" class="form-control" name="name" required
+                            value="<?php echo $senteditta->TA_Name?>"></p>
+
+                        <h2 class="fh5co-heading"> E-Mail: </h2>
+                        <p><input type="email" class="form-control" name="email" required
+                                value="<?php echo $editclient->Email?>"></p>
+
+                        <h2 class="fh5co-heading"> Phone Number: </h2>
+                        <p><input type="tel" class="form-control" name="phone" required
+                                value="<?php echo $editclient->Phone?>"></p>
+
+                        <h2 class="fh5co-heading">Activation</h2>
+                        <select type="text" name="activate" class="about__subtitle" id="activate">
+                            <option value="<?php echo $editclient->Activation?>"
+                                selected="<?php echo $editclient->Activation?>">current status
+                                -<?php echo $editclient->Activation?></option>
+                            <option value="1">No</option>
+                            <option value="2">Yes</option>
+                        </select>
+
+                        <h2 class="fh5co-heading"> Lab ID: </h2>
+                        <select type="text" name="lab" class="about__subtitle" id="lab">
+                            <?php foreach($sentlab as $row){ ?>
+                            <option value="<?php echo $row->Lab_id?>" selected="<?php echo $row->Lab_id?>">
+                                <?php echo $row->Lab_id?> - <?php echo $row->Class_Name?> </option>
+                            <?php } ?>
+                        </select>
+                        <!-- <p><input type="text" class="form-control" name="lab" required value="<?php echo $senteditta->Lab_id?>"></p>
        -->
-      <br><br><br><br><br>
+                        <br><br><br>
 
-      <div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" type="submit">
-							edit TA
-						</button>
-			</div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-md" type="submit">
+                                edit TA
+                            </button>
+                            <button class="btn btn-primary btn-md" value="Go back!" onclick="history.back()">
+                                Back
+                            </button>
+                        </div>
 
-      <div class="container-login100-form-btn m-t-32">
-	    <button class="login100-form-btn" value="Go back!" onclick="history.back()">
-	        Back
-		  </button>
-			</div>
+                    </div>
+                </form>
+            </div>
 
-		</div>
-</form>
+
+        </div>
+    </div>
     </div>
 
 
-  </div>
-</div>
-</div>
+
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
 
-     
-<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br>
+</body>
 
-
-</body> 
 </html>

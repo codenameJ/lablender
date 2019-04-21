@@ -1,152 +1,175 @@
-
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
 <!-- show list of equipment -->
 
 
 <head>
 
-  <title>Equipment List</title>
-  <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
-    
+    <title>Equipment List</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
 
 
-  <?php echo $this->getContent(); ?> 
+
+    <?php echo $this->getContent(); ?>
 
 </head>
 
 
 <!-- ------------------------------------------------------------------ -->
-  
+
 
 <body>
 
-<div id="fh5co-page">
-  <div id="fh5co-main">
-    <div class="fh5co-narrow-content">
-      <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft" > <strong>Lab Equipment </strong></h1>
-     
-      <br>
+    <div id="fh5co-page">
+        <div id="fh5co-main">
+            <div class="fh5co-narrow-content">
+                <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>Lab Equipment </strong></h1>
 
-      <div class="row row-bottom-padded-md">
-      <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-      <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
-      <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
-      <br>
-      <div class="fh5co-text">
-        <input type="text" class="form-control"id="myInput" onkeyup="myFunction()" placeholder="Search for item." id="myInput" onkeyup="myFunction()" placeholder="Search for item.">
-      </div>
-    </div>
-</div>
+                <br>
 
-<!-- --------------------------------------------------- -->
+                <div class="row row-bottom-padded-md">
+                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                        <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
+                        <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
+                        <br>
+                        <div class="fh5co-text">
+                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item." id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item.">
+                        </div>
+                    </div>
+                </div>
 
-<script>
-  $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-    });
-  });
-  </script>
-<?php echo $this->flashSession->output(); ?>
+                <!-- --------------------------------------------------- -->
 
-<!-- --------------------------------------------------- -->
-<?php
-if(!$this->session->has('studentID')){ ?>
-<div class="container-login100-form-btn m-t-32">
-            <a  class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>equip" role="button" >All Equip  |  </a>
-            <a  class="md-btn md-btn--outline-primary" href="<?php echo $this->url->getBaseUri(); ?>equip/add" role="button" >Add Equip  |  </a>
-</div>
-<?php } ?>
+                <script>
+                $(document).ready(function() {
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+                </script>
+                <?php echo $this->flashSession->output(); ?>
 
-<!-- --------------------------------------------------- -->
+                <!-- --------------------------------------------------- -->
+                <?php
+            if(!$this->session->has('studentID')){ ?>
 
-          <!------------- equipments list table --------------------------->
-          <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
-          <form action="" method="post">
-          <table id="myTable" class="table">
-            <tr><h2 class="fh5co-heading" >Equipment Name</h2></tr>
-          <thead>
-          <tr>
-          <?php
+                <h2 class="fh5co-heading">
+                    <div class="form-gruop">
+                        <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>equip"
+                            role="button"> All Equipment </a>
+                        <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>equip/add"
+                            role="button"> Add Equipment </a>
+                    </div>
+                </h2>
+                <?php } ?>
+
+                <!-- --------------------------------------------------- -->
+
+                <!------------- equipments list table --------------------------->
+                <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
+                <form action="" method="post">
+                    <table id="myTable" class="table">
+                        <tr>
+                            <h2 class="fh5co-heading">Equipment Name</h2>
+                        </tr>
+                        <thead>
+                            <tr>
+                                <?php
             if($this->session->has('IsAdmin')){ ?>
-          <th data-field="eqname">Equip ID</th>
-          <?php } ?>
-          <th data-field="eqname">Equip Name</th>
-          <th data-field="eqnum">Quantity</th>
-          <?php
+                                <th data-field="eqname">Equip ID</th>
+                                <?php } ?>
+                                <th data-field="eqname">Equip Name</th>
+                                <th data-field="eqnum">Quantity</th>
+                                <?php
             if($this->session->has('IsAdmin')){ ?>
-            <th data-field="eqnum">Lab ID</th>
-            <?php }else{ ?>
-            <th data-field="lendnum">Select Lend Quantity</th>
-            <?php } ?>
-          </tr>
-          </thead>
-            <!-- list column 1----------------- -->
+                                <th data-field="eqnum">Lab ID</th>
+                                <?php }else{ ?>
+                                <th data-field="lendnum">Select Lend Quantity</th>
+                                <?php } ?>
 
-            <?php  
+                            </tr>
+                        </thead>
+                        <!-- list column 1----------------- -->
+
+                        <?php  
               foreach($sentdata as $row)
             { ?>
 
-            <tr>
-            <?php if($this->session->has('IsAdmin')){ ?>
-              <td><p class="fh5co-lead"><?php echo $row->Equip_id ?></p></td>
-            <?php } ?>
-              <td><p class="fh5co-lead"><?php echo $row->Equip_Name ?></p></td>
-              <td><p class="fh5co-lead"><?php echo $row->Equip_Num ?></p></td>
-              <td><p class="fh5co-lead"><?php echo $row->Lab_id ?></p></td>
-              <?php
+                        <tr>
+                            <?php if($this->session->has('IsAdmin')){ ?>
+                            <td>
+                                <p class="fh5co-lead"><?php echo $row->Equip_id ?></p>
+                            </td>
+                            <?php } ?>
+                            <td>
+                                <p class="fh5co-lead"><?php echo $row->Equip_Name ?></p>
+                            </td>
+                            <td>
+                                <p class="fh5co-lead"><?php echo $row->Equip_Num ?></p>
+                            </td>
+                            <td>
+                                <p class="fh5co-lead"><?php echo $row->Lab_id ?></p>
+                            </td>
+                            <?php
             if($this->session->has('studentID')){ ?>
-              <td>
-            <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1" max="<?php echo $row->Equip_Num ?>"/>
-              <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id?>"> LENDED </a></td>
-            <?php }else{ ?>
-              <td><a href="<?php echo $this->url->getBaseUri().'equip/edit?eqid='.$row->Equip_id?>"> EDIT </a></td>
-              <td><a href="<?php echo $this->url->getBaseUri().'equip/delete?eqid='.$row->Equip_id?>"> DELETE </a></td>
-            <?php } ?>
-            </tr>  
-            </form>
-            <?php } ?>
+                            <td>
+                                <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1"
+                                    max="<?php echo $row->Equip_Num ?>" />
+                            <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id?>">
+                                    LENDED </a></td>
+                            <?php }else{ ?>
+                            <td><a href="<?php echo $this->url->getBaseUri().'equip/edit?eqid='.$row->Equip_id?>"> EDIT
+                                </a></td>
+                            <td><a href="<?php echo $this->url->getBaseUri().'equip/delete?eqid='.$row->Equip_id?>">
+                                    DELETE </a></td>
+                            <?php } ?>
+                        </tr>
+                </form>
+                <?php } ?>
 
-            <!------------------------- end column 1 -->
+                <!------------------------- end column 1 -->
 
-          </table>
+                </table>
 
-          </div>
-        <!-- </div> -->
-      </div>
-
-
-    
-  </div>
-
-
+            </div>
+            <!-- </div> -->
+        </div>
 
 
 
-</div>
+    </div>
 
 
 
-     
-<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br>
 
-</body>  
- </html>  
+
+    </div>
+
+
+
+
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>
