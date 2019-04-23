@@ -29,4 +29,25 @@ public function deleteAction(){
   }
 }
 
+public function receiveAction(){
+
+  $getrqid=trim($this->request->getPost('rqid'));
+  $selrqid=request::findFirst("request_id = '$getrqid'");
+  $getreceive=trim($this->request->getPost('receive'));
+
+  $selrqid->status=$getreceive;
+  $selrqid->save();
+
+  $receivedate = date("Y-m-d H:i:s"); 
+
+  $receivehis = new history();
+
+  $receivehis->request_id = $selrqid->request_id;
+  $receivehis->student_id = $selrqid->Student_id;
+  $receivehis->request_date = $selrqid->Request_date;
+  $receivehis->receive_date = $receivedate;
+
+  $receivehis->save();
+}
+
 }

@@ -44,14 +44,13 @@
           <!-- row 1 head  -->
             <tr>
             <th><h2 class="fh5co-heading" >Request</h2></th>
-            <th><h2 class="fh5co-heading"> Lend Date </h2></th> 
-            <th><h2 class="fh5co-heading"> Status </h2></th> 
+            <th><h2 class="fh5co-heading"> Request Date </h2></th> 
+            <th><h2 class="fh5co-heading"> Receive Date </h2></th> 
           </tr>
-          <form action="request/receive" method="post">
+          <form action="" method="post">
             <!-- row 2++ ---------------- -->
             <?php  
-              foreach($sentstdrq as $row){
-              if($row->status != 'receive')
+              foreach($senthis as $row)
             { ?>
 
             <tr>
@@ -62,11 +61,11 @@
               </td>
 
               <!-- lend date -->
-              <td><p class="fh5co-lead"><?php echo $row->Request_date ?></p></td>
+              <td><p class="fh5co-lead"><?php echo $row->request_date ?></p></td>
 
 
                <!--status -->
-               <td><p class="fh5co-lead"><?php echo $row->status ?></p></td>
+               <td><p class="fh5co-lead"><?php echo $row->receive_date ?></p></td>
 
               <tr>
               <th><h2 class="fh5co-heading" >Equip Name</h2></th>
@@ -91,22 +90,10 @@
 
             </tr>
             <!------------------------- end row 2+ -->
-            <?php 
-              if($row->status=='wait'){
-                ?>
-              <td><a href="<?php echo $this->url->getBaseUri().'request/delete?rqid='.$row->request_id?>">
-                      DELETE </a></td>
-                <?php } ?>
           
-          
-          <input type="hidden" id="receive" name="receive" value="3">
-          <?php 
-              if($row->status=='ready'){
-              ?>
-              <td><input class="btn btn-default center-block" type="submit" value="Receive"></td>
+        
               <?php } ?>
-              <?php } ?>
-              <?php } ?>
+
           </form>
           </table>
 

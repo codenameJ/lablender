@@ -1,0 +1,20 @@
+<?php
+
+class historyController extends ControllerBase {
+
+   public function beforeExecuteRoute(){ // function ที่ทำงานก่อนเริ่มการทำงานของระบบทั้งระบบ
+		$this->CheckAuthen();
+   } 
+	 	
+
+  public function indexAction(){
+
+    $getstdid=$this->session->get('studentID');
+    $stdhis=history::find("student_id = '$getstdid'");
+
+    $this->view->senthis = $stdhis;
+
+  }
+  
+
+}
