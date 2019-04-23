@@ -16,5 +16,12 @@ class historyController extends ControllerBase {
 
   }
   
+  public function allAction(){
+
+    $his=history::find();
+
+    $this->view->sentallhis = $his;
+
+  }
 
 }

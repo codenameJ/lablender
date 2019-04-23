@@ -48,6 +48,8 @@ public function receiveAction(){
   $receivehis->receive_date = $receivedate;
 
   $receivehis->save();
+
+  $this->response->redirect('request');
 }
 
 }

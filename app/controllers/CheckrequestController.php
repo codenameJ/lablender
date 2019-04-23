@@ -28,7 +28,7 @@ class CheckrequestController extends ControllerBase {
     
   }
 
-  public function reciveAction(){
+  public function receiveAction(){
 
     $request=request::find();
     $this->view->sentrq = $request;

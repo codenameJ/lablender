@@ -71,7 +71,7 @@
           role="button"> Wait Request </a>
           <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/ready"
           role="button"> Ready Request </a>
-          <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/recive"
+          <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/receive"
           role="button"> receive Request </a>
          </div>
          </h2>
@@ -141,6 +141,7 @@
 
             </tr>
 
+        <?php if($row->status != 'receive'){ ?>
           <td>
           <select type="text" name="status" class="about__subtitle" id="status">
           <option value="<?php echo $row->status ?>" 
@@ -156,6 +157,7 @@
                       DELETE </a></td>
                         </tr>
                 </form>
+                <?php } ?>
                 <?php } ?>
                 <?php } ?>
 
