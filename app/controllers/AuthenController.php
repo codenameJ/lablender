@@ -211,7 +211,9 @@ class AuthenController extends ControllerBase {
     $this->session->remove('IsAdmin');
     $this->session->remove('studentID');
     $this->session->remove('taID');
-	  $this->response->redirect('page-top');
+    $this->session->remove('cart');
+    $this->response->redirect('page-top');
+    
   }
 
 }

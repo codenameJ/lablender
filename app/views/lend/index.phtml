@@ -66,7 +66,6 @@
 
                 <!------------- equipments list table --------------------------->
                 <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
-                <form action="" method="post">
                     <table id="myTable" class="table">
                     
                         <tr>
@@ -87,28 +86,38 @@
               foreach($lineitems as $row)
             { 
               $equip = $row['equip'];?>
-
+            <form action="lend/request" method="post">
                         <tr>
                             <td>
-                                <p class="fh5co-lead"><?php echo $equip->Equip_id ?></p>
+                                <!-- <p class="fh5co-lead"><?php echo $equip->Equip_id ?></p> -->
+                                <input type="hidden" name="equip[]" readonly value="<?php echo $equip->Equip_id?>">
+                                <!-- <input type="hidden" name="eqid" id="eqid" value="<?php echo $equip->Equip_id?>"> -->
                             </td>
                             <td>
                                 <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
                             </td>
                             <td>
                                 <p class="fh5co-lead"><?php echo $row['qty'] ?></p>
-                            </td>
+                                <input type="hidden" name="eqnum[]" readonly value="<?php echo $row['qty'] ?>">
+                                <!-- <input type="hidden" name="eqnum" id="eqnum" value="<?php echo $row['qty'] ?>"> -->
+                            <!-- <td>
+                            <button type="button" class="btn btn-default" value="remove" onClick="$(this).closest('tr').remove();">Remove</button>
+			                </td>
+                            <td><a href="<?php echo $this->url->getBaseUri().'lend/delete'?>">
+                                    DELETE </a></td> -->
                         </tr>
-                </form>
                 <?php } ?>
 
 
                 <!------------------------- end column 1 -->
-
                 </table>
 
             </div>
             <!-- </div> -->
+
+            <a href="<?php echo $this->url->getBaseUri().'lend/emptyCart'?>">
+                        empty </a>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
 
 

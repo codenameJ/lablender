@@ -28,16 +28,13 @@ class equipController extends ControllerBase {
   
   public function lendAction(){
 
-    $seleq=$this->request->get('eqid');
-    $eq=equip::findFirst("Equip_id = '$seleq'");
-
-
-    $qty=$this->request->get('eqnum');
+    $seleq=trim($this->request->getPost('eqid'));
+    $qty=trim($this->request->getPost('eqnum'));
 
     if ($this->session->has('cart')) {
       $cart = $this->session->get('cart');
-      if (isset($cart[$seleq])) {
-        $cart[$seleq]=$cart[$seleq]+1; //add one to product in cart
+      if (isset($cart[$seleq])){
+        $cart[$seleq]=$cart[$seleq]+$qty; //add qty to product in cart
       }
       else {
         $cart[$seleq]=$qty; //new product in cart
@@ -48,7 +45,7 @@ class equipController extends ControllerBase {
     }
     $this->session->set('cart',$cart); // make the cart a session variable
     $this->response->redirect('equip');
-  
+  // }
 }
 
 public function addAction(){

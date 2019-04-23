@@ -86,3 +86,13 @@
 
 [Mon, 22 Apr 19 01:48:09 +0700][ERROR] [0]: Cannot resolve attribute 'id' in the model
 
+[Mon, 22 Apr 19 22:39:14 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`request`, CONSTRAINT `fk_request_students1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`Student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+
+[Mon, 22 Apr 19 22:40:08 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`request`, CONSTRAINT `fk_request_students1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`Student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+
+[Mon, 22 Apr 19 22:40:24 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`request`, CONSTRAINT `fk_request_students1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`Student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+
+[Mon, 22 Apr 19 22:40:47 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`request`, CONSTRAINT `fk_request_students1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`Student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+
+[Mon, 22 Apr 19 22:42:11 +0700][ERROR] [23000]: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`lablender`.`request`, CONSTRAINT `fk_request_students1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`Student_id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+

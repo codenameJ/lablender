@@ -1,0 +1,4 @@
+[Wed, 24 Apr 19 02:16:53 +0700][ERROR] [01000]: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+
+[Wed, 24 Apr 19 02:17:12 +0700][ERROR] [01000]: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'status' at row 1
+

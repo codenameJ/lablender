@@ -63,12 +63,30 @@
                             <?php echo $this->session->get('memberAuthen');?></a>
                     </li>
 
+                    <?php
+          if($this->session->has('taID') || $this->session->has('IsAdmin')){ ?>
                     <li>
-                        <a href="<?php echo $this->url->getBaseUri(); ?>history">History</a></li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>checkrequest">Check Request</a>
+                    </li>
 
+                    <?php } ?>
+
+                    <?php
+          if($this->session->has('studentID')){ ?>
                     <li>
                         <a href="<?php echo $this->url->getBaseUri(); ?>lend">Lended</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>request">Request</a>
+                    </li>
+
+
+                    <li>
+                        <a href="<?php echo $this->url->getBaseUri(); ?>history">History</a>
+                    </li>
+
+                    <?php } ?>
 
                     <li>
                         <a href="<?php echo $this->url->getBaseUri(); ?>authen/signOut">Log Out</a>
