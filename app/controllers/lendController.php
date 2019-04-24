@@ -62,7 +62,6 @@ class lendController extends ControllerBase {
 
   public function requestAction(){
 
-
 			$request = new request();
 			$requestdate = date("Y-m-d H:i:s"); 
 			$getstdid=$this->session->get('studentID');
@@ -77,12 +76,23 @@ class lendController extends ControllerBase {
 			$equipnum = $this->request->getPost("eqnum");
 			
 			for($i=0;$i<sizeof($equipnum);$i++) {
-				
+
+				$cureqid = $equipid[$i];
+				$cureqqty = $equipnum[$i];
+
 				$requestdetail = new request_detail();
 				$requestdetail->Equip_Num=$equipnum[$i];
 				$requestdetail->Equip_id=$equipid[$i];
 				$requestdetail->Request_id=$requistid;
 				$requestdetail->save();
+
+				$equip = equip::findFirst("Equip_id = '$cureqid'");
+				$preqty = $equip->Equip_Num;
+				$postqty = $preqty - $cureqqty;
+				$equip->Equip_Num = $postqty;
+
+				$equip->save();
+
 			}
 			$this->session->remove('cart');
 			$this->flashSession->success("The Order has been placed");

@@ -3,7 +3,8 @@
 class requestController extends ControllerBase {
 
    public function beforeExecuteRoute(){ // function ที่ทำงานก่อนเริ่มการทำงานของระบบทั้งระบบ
-		$this->CheckAuthen();
+    $this->CheckAuthen();
+    $this->CheckStudent();
    } 
 	 	
 
@@ -21,6 +22,20 @@ public function deleteAction(){
   if($this->session->has('studentID')){
     $getrqid=$this->request->get('rqid');
     $delerqip=request::findFirst("request_id = '$getrqid'");
+
+    $rqdetail = request_detail::find("Request_id = '$getrqid'");
+
+    foreach($rqdetail as $row){
+      $equip = equip::findFirst("Equip_id = '$row->Equip_id'");
+      $lendqty = $row->Equip_Num;
+      $curqty = $equip->Equip_Num;
+      $reqty = $lendqty+$curqty;
+
+      $equip->Equip_Num = $reqty;
+
+      $equip->save();
+    }
+
     $delerqip->delete();
   $this->response->redirect('request');
   }else{

@@ -89,13 +89,13 @@
                         <thead>
                             <tr>
                                 <?php
-            if($this->session->has('IsAdmin')){ ?>
+            if(!$this->session->has('studentID')){ ?>
                                 <th data-field="eqname">Equip ID</th>
                                 <?php } ?>
                                 <th data-field="eqname">Equip Name</th>
                                 <th data-field="eqnum">Quantity</th>
                                 <?php
-            if($this->session->has('IsAdmin')){ ?>
+            if(!$this->session->has('studentID')){ ?>
                                 <th data-field="eqnum">Lab ID</th>
                                 <?php }else{ ?>
                                 <th data-field="lendnum">Select Lend Quantity</th>
@@ -110,7 +110,7 @@
             { ?>
                         <form action="equip/lend" method="post">
                             <tr>
-                                <?php if($this->session->has('IsAdmin')){ ?>
+                                <?php if(!$this->session->has('studentID')){ ?>
                                 <td>
                                     <p class="fh5co-lead"><?php echo $row->Equip_id ?></p>
                                 </td>
@@ -120,19 +120,23 @@
                                     <p class="fh5co-lead"><?php echo $row->Equip_Name ?></p>
                                 </td>
                                 <td>
-                                    <p class="fh5co-lead"><?php echo $row->Equip_Num ?></p>
-                                </td>
+                                    <p class="fh5co-lead"><?php if($row->Equip_Num != 0) echo $row->Equip_Num; else echo "Out Of Stock"; ?></p>
+                                </td>>
+
+                                <?php if(!$this->session->has('studentID')){ ?>
                                 <td>
                                     <p class="fh5co-lead"><?php echo $row->Lab_id ?></p>
                                 </td>
+                                <?php } ?>
+
                                 <?php
             if($this->session->has('studentID')){ ?>
+                                <?php if($row->Equip_Num != 0){ ?>
                                 <td>
                                     <input type="number" id="eqnum" name="eqnum" class="input-group" value="1" min="1"
                                         max="<?php echo $row->Equip_Num ?>" />
-                                    <!-- <td><a href="<?php echo $this->url->getBaseUri().'equip/lend?eqid='.$row->Equip_id?>">
-                                    LENDED </a></td> -->
                                 <td><input class="btn btn-default center-block" type="submit" value="LEND"></td>
+                                <?php } ?>
                                 <?php }else{ ?>
                                 <td><a href="<?php echo $this->url->getBaseUri().'equip/edit?eqid='.$row->Equip_id?>">
                                         EDIT

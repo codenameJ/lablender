@@ -1,0 +1,4 @@
+[Thu, 25 Apr 19 02:22:16 +0700][ERROR] [0]: Column 'equip_id' doesn't belong to any of the selected models (1), when preparing: SELECT [equip].* FROM [equip] WHERE equip_id = '1' LIMIT :APL0:
+
+[Thu, 25 Apr 19 02:23:13 +0700][ERROR] [0]: Column 'equip_id' doesn't belong to any of the selected models (1), when preparing: SELECT [equip].* FROM [equip] WHERE equip_id = '1' LIMIT :APL0:
+

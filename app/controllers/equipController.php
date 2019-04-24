@@ -3,7 +3,7 @@
 class equipController extends ControllerBase {
 
    public function beforeExecuteRoute(){ // function ที่ทำงานก่อนเริ่มการทำงานของระบบทั้งระบบ
-		$this->CheckAuthen();
+    $this->CheckAuthen();
    } 
 	 	
 

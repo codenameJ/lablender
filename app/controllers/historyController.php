@@ -3,7 +3,7 @@
 class historyController extends ControllerBase {
 
    public function beforeExecuteRoute(){ // function ที่ทำงานก่อนเริ่มการทำงานของระบบทั้งระบบ
-		$this->CheckAuthen();
+    $this->CheckAuthen();
    } 
 	 	
 
@@ -17,7 +17,7 @@ class historyController extends ControllerBase {
   }
   
   public function allAction(){
-
+    $this->CheckTa();
     $his=history::find();
 
     $this->view->sentallhis = $his;
