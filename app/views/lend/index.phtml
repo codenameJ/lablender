@@ -30,7 +30,7 @@
     <div id="fh5co-page">
         <div id="fh5co-main">
             <div class="fh5co-narrow-content">
-                <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>Lent</strong></h1>
+                <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>Lending</strong></h1>
 
                 <br>
 
@@ -66,27 +66,27 @@
 
                 <!------------- equipments list table --------------------------->
                 <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
-                    <table id="myTable" class="table">
-                    
+                <table id="myTable" class="table">
+
+                    <tr>
+                        <h2 class="fh5co-heading"><strong>Equipment was lened</strong></h2>
+                    </tr>
+                    <thead>
                         <tr>
-                            <h2 class="fh5co-heading">Equipment Name</h2>
+
+                            <th><h2 class="fh5co-heading" data-field="eqname"> Equip ID </h2></th>
+                            <th><h2 class="fh5co-heading" data-field="eqname"> Equip Name </h2></th>
+                            <th><h2 class="fh5co-heading" data-field="eqnum">Quantity </h2></th>
+
                         </tr>
-                        <thead>
-                            <tr>
+                    </thead>
+                    <!-- list column 1----------------- -->
 
-                                <th data-field="eqname">Equip ID</th>
-                                <th data-field="eqname">Equip Name</th>
-                                <th data-field="eqnum">Quantity</th>
-
-                            </tr>
-                        </thead>
-                        <!-- list column 1----------------- -->
-
-                        <?php  
+                    <?php  
               foreach($lineitems as $row)
             { 
               $equip = $row['equip'];?>
-            <form action="lend/request" method="post">
+                    <form action="lend/request" method="post">
                         <tr>
                             <td>
                                 <!-- <p class="fh5co-lead"><?php echo $equip->Equip_id ?></p> -->
@@ -100,24 +100,27 @@
                                 <p class="fh5co-lead"><?php echo $row['qty'] ?></p>
                                 <input type="hidden" name="eqnum[]" readonly value="<?php echo $row['qty'] ?>">
                                 <!-- <input type="hidden" name="eqnum" id="eqnum" value="<?php echo $row['qty'] ?>"> -->
-                            <!-- <td>
+                                <!-- <td>
                             <button type="button" class="btn btn-default" value="remove" onClick="$(this).closest('tr').remove();">Remove</button>
 			                </td>
                             <td><a href="<?php echo $this->url->getBaseUri().'lend/delete'?>">
                                     DELETE </a></td> -->
                         </tr>
-                <?php } ?>
+                        <?php } ?>
 
 
-                <!------------------------- end column 1 -->
+                        <!------------------------- end column 1 -->
                 </table>
+
+                <p> Please click <strong> summit </strong> to send a request</p><br>
+                <a class="btn btn-primary" href="<?php echo $this->url->getBaseUri().'lend/emptyCart'?>">
+                empty </a>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
             </div>
             <!-- </div> -->
 
-            <a href="<?php echo $this->url->getBaseUri().'lend/emptyCart'?>">
-                        empty </a>
-            <button type="submit" class="btn btn-primary">Submit</button>
+          
         </div>
 
 

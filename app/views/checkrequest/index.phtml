@@ -15,6 +15,24 @@
         content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
     <meta name="author" content="FreeHTML5.co" />
 
+    <style>
+    table,
+    td,
+    th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+    </style>
 
 
     <?php echo $this->getContent(); ?>
@@ -26,173 +44,149 @@
 
 
 <body>
-
     <div id="fh5co-page">
         <div id="fh5co-main">
-            <div class="fh5co-narrow-content">
-                <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>Check Request</strong></h1>
+            <form action="checkrequest/save" method="post">
+                <div class="fh5co-narrow-content">
 
-                <br>
+                    <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>Check Request</strong>
+                    </h1>
 
-                <div class="row row-bottom-padded-md">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
-                        <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
-                        <br>
-                        <div class="fh5co-text">
-                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
-                                placeholder="Search for item." id="myInput" onkeyup="myFunction()"
-                                placeholder="Search for item.">
+                    <br>
+
+                    <div class="row row-bottom-padded-md">
+
+                        <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                            <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
+                            <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
+                            <br>
+                            <div class="fh5co-text">
+                                <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
+                                    placeholder="Search for item." id="myInput" onkeyup="myFunction()"
+                                    placeholder="Search for item.">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- --------------------------------------------------- -->
+                    <!-- --------------------------------------------------- -->
 
-                <script>
-                $(document).ready(function() {
-                    $("#myInput").on("keyup", function() {
-                        var value = $(this).val().toLowerCase();
-                        $("#myTable tr").filter(function() {
-                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    <script>
+                    $(document).ready(function() {
+                        $("#myInput").on("keyup", function() {
+                            var value = $(this).val().toLowerCase();
+                            $("#myTable tr").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
                         });
                     });
-                });
-                </script>
-                <?php echo $this->flashSession->output(); ?>
+                    </script>
 
-                <!-- --------------------------------------------------- -->
-    
-         <h2 class="fh5co-heading">
-         <div class="form-gruop">
-         <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest"
-          role="button"> All Request </a>
-         <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/wait"
-          role="button"> Wait Request </a>
-          <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/ready"
-          role="button"> Ready Request </a>
-          <a class="btn btn-primary btn-md" href="<?php echo $this->url->getBaseUri(); ?>checkrequest/receive"
-          role="button"> receive Request </a>
-         </div>
-         </h2>
-                <!-- --------------------------------------------------- -->
+                    <?php echo $this->flashSession->output(); ?>
+
+                    <!-- --------------------------------------------------- -->
+
+                    <div class="animate-box text-center" data-animate-effect="fadeInLeft">
+                        <h2 class="fh5co-heading">
+                            <div class="form-gruop">
+                                <a class="btn btn-primary btn-md"
+                                    href="<?php echo $this->url->getBaseUri(); ?>checkrequest" role="button">
+                                    All Request
+                                </a>
+                                <a class="btn btn-primary btn-md"
+                                    href="<?php echo $this->url->getBaseUri(); ?>checkrequest/wait" role="button">
+                                    Wait Request
+                                </a>
+                                <a class="btn btn-primary btn-md"
+                                    href="<?php echo $this->url->getBaseUri(); ?>checkrequest/ready" role="button">
+                                    Ready Request
+                                </a>
+                                <a class="btn btn-primary btn-md"
+                                    href="<?php echo $this->url->getBaseUri(); ?>checkrequest/receive" role="button">
+                                    receive Request
+                                </a>
+                            </div>
+                        </h2>
+                    </div>
+
+                    <!-- --------------------------------------------------- -->
 
 
-                <!------------- equipments list table --------------------------->
-                <!-- tr = row = ᡹ x , column = ᡹ y, th = header, td = cell -->
-                
-                    <table id="myTable" class="table">
-                        <tr>
-                            <h2 class="fh5co-heading">Check Request</h2>
-                        </tr>
+                    <?php  
+                    foreach($sentrq as $row)
+                    { ?>
 
-                        <thead>
+                    <!-- left -->
+
+                    <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
+
+                        <h2 class="fh5co-heading"> <strong> Request ID: </strong>
+                            <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
+                            <?php echo $row->request_id ?>
+                        </h2>
+
+                        <h2 class="fh5co-heading"> <strong> Lending Date: </strong> <?php echo $row->Request_date ?>
+                        </h2>
+                        <h2 class="fh5co-heading"> <strong> Student ID: </strong> <?php echo $row->Student_id ?> </h2>
+
+                        <h2 class="fh5co-heading"> <strong> Change Status:  </strong> <?php echo $row->status ?>
+                        <br><br>
+                            <?php if($row->status != 'receive'){ ?>
+                            <select type="text" name="status" class="select-css" id="status">
+                                <option value="<?php echo $row->status ?>" selected="<?php echo $row->status ?>">current
+                                    status
+                                    - <?php echo $row->status ?></option>
+                                <option value="1">Wait</option>
+                                <option value="2">Ready</option>
+                                <option value="3">receive</option>
+                            </select>
+                            <br><br>
+                        </h2>
+
+                        <input class="btn btn-default" type="submit" value="save">
+                        <a class="btn btn-default" href="<?php echo $this->url->getBaseUri().'checkrequest/delete?rqid='.$row->request_id?>">
+                            DELETE </a>
+                        <?php } ?>
+                    </div>
+
+                    <!-- right -->
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
+                        <table>
                             <tr>
-                                <th data-field="eqname">Request ID</th>
-                                <th data-field="eqname">Lend Date</th>
-                                <th data-field="eqnum">Student ID</th>
-                                <th data-field="eqnum">Status</th>
-                                <th data-field="lendnum">Change Status</th>
+                                <th>
+                                    <h2 class="fh5co-heading"> Equip Name </h2>
+                                </th>
+                                <th>
+                                    <h2 class="fh5co-heading"> Quantity </h2>
+                                </th>
                             </tr>
-                        </thead>
-                        <!-- list column 1----------------- -->
 
-                        <?php  
-              foreach($sentrq as $row)
-            { ?>
-                        <form action="checkrequest/save" method="post">
-                        <tr>
-                            <td>
-                                <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
-                                <p class="fh5co-lead"><?php echo $row->request_id ?></p>
-                            </td>
-                            <td>
-                                <p class="fh5co-lead"><?php echo $row->Request_date ?></p>
-                            </td>
-                            <td>
-                                <p class="fh5co-lead"><?php echo $row->Student_id ?></p>
-                            </td>
-                            <td>
-                                <p class="fh5co-lead"><?php echo $row->status ?></p>
-                            </td>
-                                          <tr>
-              <th><h2 class="fh5co-heading" >Equip Name</h2></th>
-              <th><h2 class="fh5co-heading"> Quantity </h2></th> 
-              </tr>
-              <?php
-              $requestdetail = request_detail::find("Request_id ='$row->request_id'");
-              foreach($requestdetail as $detail){
-              $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
-              ?>
-            <tr>
+                            <?php
+                            $requestdetail = request_detail::find("Request_id ='$row->request_id'");
+                            foreach($requestdetail as $detail){
+                            $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
+                        ?>
 
-              <td>
-              <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
-              </td>
+                            <tr>
+                                <td>
+                                    <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
+                                </td>
+                                <td>
+                                    <p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </table>
+                        <br><br>
+                    </div>
 
+                    <?php } ?>
 
-              <td>
-              <p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p></td>
-              </tr>
-
-              <?php } ?>
-
-            </tr>
-
-        <?php if($row->status != 'receive'){ ?>
-          <td>
-          <select type="text" name="status" class="about__subtitle" id="status">
-          <option value="<?php echo $row->status ?>" 
-                  selected="<?php echo $row->status ?>">current status
-             - <?php echo $row->status ?></option>
-             <option value="1">Wait</option>
-             <option value="2">Ready</option>
-             <option value="3">receive</option>
-            </select>
-            </td>
-
-            
-            <td><input class="btn btn-default center-block" type="submit" value="save"></td>
-            
-          <td><a href="<?php echo $this->url->getBaseUri().'checkrequest/delete?rqid='.$row->request_id?>">
-                      DELETE </a></td>
-                        </tr>
-                </form>
-                <?php } ?>
-                <?php } ?>
-
-
-                <!------------------------- end column 1 -->
-
-                </table>
-
-            </div>
-            <!-- </div> -->
+                </div>
+            </form>
         </div>
-
-
-
     </div>
-
-
-
-
-
     </div>
-
-
-
-
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-
 </body>
 
 </html>

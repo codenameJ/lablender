@@ -1,123 +1,123 @@
-
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html>
-
-<!-- show lending history : User Mode -->
-<!-- แสดงประวัติการยืม/คืนของนศ รายละเอียดอุปกรณ์ จะต้องกดเข้าไปดูในหน้า detail จะ link กับหน้า history/detail -->
-
 
 <head>
 
-  <title>Lending History</title>
-  <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FreeHTML5.co" />
-    
+    <title>Lending History</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords"
+        content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
 
-  <?php echo $this->getContent(); ?> 
+
+    <style>
+    table,
+    td,
+    th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+    </style>
+    <?php echo $this->getContent(); ?>
 
 </head>
 
 
 <!-- ------------------------------------------------------------------ -->
-  
+
 
 <body>
-<div id="fh5co-page">
-  <div id="fh5co-main">
-    <div class="fh5co-narrow-content">
-      <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft" > Equipments that you lended </h2>
-      <div class="row row-bottom-padded-md">
-        <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
-          <div class="blog-entry">
-            
+    <div id="fh5co-page">
+        <div id="fh5co-main">
+            <div class="fh5co-narrow-content">
 
-          <!------------- equipments list table --------------------------->
-          <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
-          <?php echo $this->flashSession->output(); ?>
-          <table class="table">
-
-          <!-- row 1 head  -->
-            <tr>
-            <th><h2 class="fh5co-heading" >Request</h2></th>
-            <th><h2 class="fh5co-heading"> Request Date </h2></th> 
-            <th><h2 class="fh5co-heading"> Receive Date </h2></th> 
-          </tr>
-          <form action="" method="post">
-            <!-- row 2++ ---------------- -->
-            <?php  
-              foreach($sentallhis as $row)
-            { ?>
-
-            <tr>
-            <!-- equip neme -->
-              <td>
-              <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
-              <p class="fh5co-lead"><?php echo $row->request_id ?></p>
-              </td>
-
-              <!-- lend date -->
-              <td><p class="fh5co-lead"><?php echo $row->request_date ?></p></td>
+                <h1 class="fh5co-heading-colored" data-animate-effect="fadeInLeft"> <strong>History</strong> </h1>
 
 
-               <!--status -->
-               <td><p class="fh5co-lead"><?php echo $row->receive_date ?></p></td>
+                <div class="row row-bottom-padded-md">
+                    <?php echo $this->flashSession->output(); ?>
 
-              <tr>
-              <th><h2 class="fh5co-heading" >Equip Name</h2></th>
-              <th><h2 class="fh5co-heading"> Quantity </h2></th> 
-              </tr>
-              <?php
-              $requestdetail = request_detail::find("Request_id ='$row->request_id'");
-              foreach($requestdetail as $detail){
-              $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
-              ?>
-            <tr>
-            <!-- equip neme -->
-              <td>
-              <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
-              </td>
+                    <!-- left -->
 
-              <!-- lend date -->
-              <td><p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p></td>
-              </tr>
+                    <form action="" method="post">
 
-              <?php } ?>
+                        <?php  
+                          foreach($sentallhis as $row)
+                        { ?>
 
-            </tr>
-            <!------------------------- end row 2+ -->
-          
-        
-              <?php } ?>
+                        <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
 
-          </form>
-          </table>
+                            <h2 class="fh5co-heading"> <strong> Request ID: </strong>
+                                <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
+                                <?php echo $row->request_id ?>
+                            </h2>
+
+                            <h2 class="fh5co-heading"> <strong> Request Date: </strong> <?php echo $row->request_date ?>
+                            </h2>
+
+                            <h2 class="fh5co-heading"><strong> Received Date: </strong> <?php echo $row->receive_date ?>
+                            </h2>
+
+                        </div>
+
+                        <!-- right -->
+                        <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                            <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
+                            <table>
+
+                                <tr>
+                                    <th>
+                                        <h2 class="fh5co-heading"> Equip Name </h2>
+                                    </th>
+                                    <th>
+                                        <h2 class="fh5co-heading"> Quantity </h2>
+                                    </th>
+                                </tr>
+
+                                <!-- row2 -->
+                                <?php
+                                $requestdetail = request_detail::find("Request_id ='$row->request_id'");
+                                foreach($requestdetail as $detail){
+                                $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
+                            ?>
+                                <tr>
+                                    <td>
+                                        <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
+                                    </td>
+                                    <td>
+                                        <p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p>
+                                    </td>
+                                </tr>
+
+                                <?php } ?>
+                            </table>
+
+                            <br><br>
+
+                        </div>
+
+                        <?php } ?>
 
 
-          </div>
+                    </form>
+                </div>
+
+            </div>
         </div>
-      </div>
+</body>
 
-
-    </div>
-  </div>
-
-</div>
-
- 
-<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-     <br><br><br><br><br><br><br><br>
-	<br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br>
-
-</body>  
- </html>  
+</html>

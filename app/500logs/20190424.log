@@ -42,3 +42,13 @@
 
 [Wed, 24 Apr 19 04:34:09 +0700][ERROR] [0]: Column 'Student_id' doesn't belong to any of the selected models (1), when preparing: SELECT [history].* FROM [history] WHERE Student_id = '590610606'
 
+[Wed, 24 Apr 19 16:12:04 +0700][ERROR] [0]: Column 'Student_id' doesn't belong to any of the selected models (1), when preparing: SELECT [request].* FROM [request] WHERE Student_id = '590610606'
+
+[Wed, 24 Apr 19 16:21:25 +0700][ERROR] [0]: Column 'Student_id' doesn't belong to any of the selected models (1), when preparing: SELECT [request].* FROM [request] WHERE Student_id = '590610606'
+
+[Wed, 24 Apr 19 16:21:36 +0700][ERROR] [0]: Table 'history' doesn't exist in database when dumping meta-data for history
+
+[Wed, 24 Apr 19 16:21:37 +0700][ERROR] [0]: Column 'Student_id' doesn't belong to any of the selected models (1), when preparing: SELECT [request].* FROM [request] WHERE Student_id = '590610606'
+
+[Wed, 24 Apr 19 16:22:09 +0700][ERROR] [0]: Column 'Student_id' doesn't belong to any of the selected models (1), when preparing: SELECT [request].* FROM [request] WHERE Student_id = '590610606'
+
