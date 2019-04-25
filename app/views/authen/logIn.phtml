@@ -55,7 +55,7 @@
                     <?php echo $this->flashSession->output(); ?>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                        <input class="input100" type="email" name="email" placeholder="E-Mail"
+                        <input class="form-control" type="email" name="email" placeholder="E-Mail"
                             value="<?php if(isset($Email))echo $Email; ?>">
                         <span class="focus-input100"></span>
                     </div>
@@ -63,7 +63,7 @@
                     <br>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password"
+                        <input class="form-control"  type="password" name="pass" placeholder="Password"
                             value="<?php if(isset($Password))echo $Password; ?>">
                         <span class="focus-input100"></span>
                     </div>

@@ -38,32 +38,32 @@
                     <?php echo $this->flashSession->output(); ?>
                     <input type="hidden" name="id" value="<?php echo $client->client_id;?>">
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Name is required">
-                        <input class="input100" type="text" name="name" placeholder="Name" required>
+                        <input class="form-control"  type="text" name="name" placeholder="Name" required>
                         <span class="focus-input100"></span>
                     </div>
                     <br>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="pass" placeholder="Password" required>
+                        <input class="form-control"  type="password" name="pass" placeholder="Password" required>
                         <span class="focus-input100"></span>
                     </div>
                     <br>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="ID is required">
-                        <input class="input100" type="text" name="studentid" placeholder="Student ID" required
+                        <input class="form-control"   type="text" name="studentid" placeholder="Student ID" required
                             pattern="[0-9]{9}">
                         <span class="focus-input100"></span>
                     </div>
                     <br>
 
                     <div class="wrap-input100 validate-input m-b-16" data-validate="E-mail is required">
-                        <input class="input100" type="email" name="email" placeholder="E-mail" required>
+                        <input class="form-control"  type="email" name="email" placeholder="E-mail" required>
                         <!-- pattern="[a-z0-9._%+-]+@cmu.ac.th$"> -->
                         <span class="focus-input100"></span>
                     </div>
                     <br>
                     <div class="wrap-input100 validate-input m-b-16" data-validate="PhoneNo is required">
-                        <input class="input100" type="tel" name="phoneno" placeholder="Phone Number" required
+                        <input class="form-control" type="tel" name="phoneno" placeholder="Phone Number" required
                             pattern="[0-9]{10}">
                         <span class="focus-input100"></span>
                     </div>
