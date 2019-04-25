@@ -108,3 +108,17 @@
 
 [Thu, 25 Apr 19 20:31:16 +0700][ERROR] [2]: ImagesController handler class cannot be loaded
 
+[Thu, 25 Apr 19 20:43:17 +0700][ERROR] [2]: IndexController handler class cannot be loaded
+
+[Thu, 25 Apr 19 20:43:18 +0700][ERROR] [2]: IndexController handler class cannot be loaded
+
+[Thu, 25 Apr 19 20:43:19 +0700][ERROR] [2]: ImagesController handler class cannot be loaded
+
+[Thu, 25 Apr 19 20:43:20 +0700][ERROR] [2]: ImagesController handler class cannot be loaded
+
+[Thu, 25 Apr 19 20:43:20 +0700][ERROR] [5]: Action 'public' was not found on handler 'authen'
+
+[Thu, 25 Apr 19 20:43:33 +0700][ERROR] [5]: Action 'images' was not found on handler 'authen'
+
+[Thu, 25 Apr 19 20:44:57 +0700][ERROR] [2]: ImagesController handler class cannot be loaded
+

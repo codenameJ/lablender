@@ -25,10 +25,11 @@ class AuthenController extends ControllerBase {
       $rememberMe = $this->request->getPost('rememberMe'); // รับค่าจาก form
 
       $member=client::findFirst("Email = '$email'");
-      $student=students::findFirst("client_id ='$member->client_id'");
-      $ta=ta::findFirst("client_id = '$member->client_id'");
 
       if($member){
+        $student=students::findFirst("client_id ='$member->client_id'");
+        $ta=ta::findFirst("client_id = '$member->client_id'");
+        
           if($this->security->checkHash($pass, $member->Password)){ // ตรวจสอบรหัสด้วย key การเข้ารหัส
 
             if($member->Activation === 'Yes'){
