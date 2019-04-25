@@ -100,5 +100,6 @@ class ControllerBase extends Controller{
 	 if(!$this->session->has('taID')){ // ตรวจสอบว่ามี session การเข้าระบบ หรือไม่
       $this->response->redirect('authen/login');
    }
-   }
+  }
+
 }

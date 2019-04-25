@@ -4,12 +4,13 @@ class CheckrequestController extends ControllerBase {
 
    public function beforeExecuteRoute(){ // function ที่ทำงานก่อนเริ่มการทำงานของระบบทั้งระบบ
     $this->CheckAuthen();
-    $this->checkTa();
+    if($this->session->has('studentID')){
+      $this->response->redirect('profile');
+    }
    } 
 	 	
 
   public function indexAction(){
-
     $request=request::find();
     $this->view->sentrq = $request;
     
