@@ -44,15 +44,20 @@
                     <tr>
                         <h2 class="fh5co-heading"><strong>Equipment was lened</strong></h2>
                     </tr>
+                    
                     <thead>
                         <tr>
 
                             <th><h2 class="fh5co-heading" data-field="eqname"> Equip ID </h2></th>
                             <th><h2 class="fh5co-heading" data-field="eqname"> Equip Name </h2></th>
-                            <th><h2 class="fh5co-heading" data-field="eqnum">Quantity </h2></th>
+                            <th><h2 class="fh5co-heading" data-field="eqnum"> Quantity </h2></th>
 
                         </tr>
                     </thead>
+
+                    <?php echo $this->flashSession->output(); ?>
+
+                    
                     <!-- list column 1----------------- -->
 
                     <?php  

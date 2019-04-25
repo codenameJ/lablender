@@ -40,26 +40,26 @@ class lendController extends ControllerBase {
 	
 	public function deleteAction(){
 		
-		// $equip = trim($this->request->getPost('eqid'));
-		// $eq = equip::findFirst("Equip_id ='$equip'");
-		// $qty = trim($this->request->getPost('eqnum'));
+	// 	$equip = trim($this->request->getPost('eqid'));
+	// 	$eq = equip::findFirst("Equip_id ='$equip'");
+	// 	$qty = trim($this->request->getPost('eqnum'));
 
-		// $seleq=trim($this->request->getPost('eqid'));
-		// $eq = equip::findFirst("Equip_id ='$seleq'");
-    // $qty=trim($this->request->getPost('eqnum'));
+	// 	$seleq=trim($this->request->getPost('eqid'));
+	// 	$eq = equip::findFirst("Equip_id ='$seleq'");
+  //   $qty=trim($this->request->getPost('eqnum'));
 
-    // if ($this->session->has('cart')) {
-		// 	$cart = $this->session->get('cart');
-    //   if($cart[$eq->Equip_id]==$seleq){
-		// 		unset($cart[$eq->Equip_id][$qty]);
-		// 		// $cart[$eq->Equip_id]=" ";
-    //     // $this->response->redirect('profile'); //add qty to product in cart
-    //   }else{
-		// 		unset($cart[$seleq]);
-		// 		// $this->response->redirect('profile'); 
-		// 	}
-		// }
-		// $this->session->set('cart',$cart);
+  //   if ($this->session->has('cart')) {
+	// 		$cart = $this->session->get('cart');
+  //     if($cart[$eq->Equip_id]==$seleq){
+	// 			unset($cart[$eq->Equip_id][$qty]);
+	// 			// $cart[$eq->Equip_id]=" ";
+  //       // $this->response->redirect('profile'); //add qty to product in cart
+  //     }else{
+	// 			unset($cart[$seleq]);
+	// 			// $this->response->redirect('profile'); 
+	// 		}
+	// 	}
+	// 	$this->session->set('cart',$cart);
 	// }
 	
 	// $this->response->redirect('lend');

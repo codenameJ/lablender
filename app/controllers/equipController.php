@@ -25,6 +25,25 @@ class equipController extends ControllerBase {
     $this->view->sentdata = $equip;
 
   }
+
+  public function labmicroAction(){
+
+
+    if ($this->session->has('cart')) {
+      $cart = $this->session->get('cart');
+      $totalQty=0;
+      foreach ($cart as $equip => $qty) {
+        $totalQty = $totalQty + $qty;
+      }
+      $this->view->totalItems=$totalQty;
+    }
+    else {
+      $this->view->totalItems=0;
+    }
+    $equip = equip::find();
+    $this->view->sentdata = $equip;
+
+  }
   
   public function lendAction(){
 
@@ -52,6 +71,34 @@ class equipController extends ControllerBase {
     $this->session->set('cart',$cart); // make the cart a session variable
     $this->response->redirect('equip');
   // }
+}
+
+public function lendlabmicroAction(){
+
+  $seleq=trim($this->request->getPost('eqid'));
+  $qty=trim($this->request->getPost('eqnum'));
+
+  $equip = equip::findFirst("Equip_id = '$seleq'");
+
+  if ($this->session->has('cart')) {
+    $cart = $this->session->get('cart');
+    if (isset($cart[$seleq])){
+      if($cart[$seleq]+$qty<=$equip->Equip_Num){
+      $cart[$seleq]=$cart[$seleq]+$qty; //add qty to product in cart
+      }else{
+        $this->flashSession->error('Equip Not Enough');
+      }
+    }
+    else {
+      $cart[$seleq]=$qty; //new product in cart
+    }
+  }
+  else {
+    $cart[$seleq]=$qty; //new cart
+  }
+  $this->session->set('cart',$cart); // make the cart a session variable
+  $this->response->redirect('equip/labmicro');
+// }
 }
 
 public function addAction(){

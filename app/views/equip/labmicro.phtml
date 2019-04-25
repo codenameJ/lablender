@@ -104,8 +104,8 @@
 
                         <?php  
               foreach($sentdata as $row){
-                  if($row->Lab_id == "401"){  ?>
-                        <form action="equip/lend" method="post">
+                  if($row->Lab_id == "405"){  ?>
+                        <form action="lendlabmicro" method="post">
                             <tr>
                                 <?php if(!$this->session->has('studentID')){ ?>
                                 <td>
