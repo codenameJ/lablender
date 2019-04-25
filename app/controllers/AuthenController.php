@@ -143,7 +143,7 @@ class AuthenController extends ControllerBase {
     
           $params = [
           'name' => $this->request->getPost('name'),
-          'link' => "http://localhost/lablender_demo10/authen/activate?id=".$client->client_id."?"
+          'link' => "http://localhost/lablender/authen/activate?id=".$client->client_id."?"
           ];
           $sentmail->send($this->request->getPost('email'), 'signup', $params);
 

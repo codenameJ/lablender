@@ -32,7 +32,7 @@ return new \Phalcon\Config([
     ],// สามารถเพิ่ม config ต่างๆได้ในนี้
     'mail' => [
         'templatesDir' => 'mail/',
-        'fromName' => 'Phalcon App',
+        'fromName' => 'Lablender Team',
         'fromEmail' => 'lablender.cpecmu@gmail.com',
         'smtp' => [
             'server' => 'ssl://smtp.googlemail.com',

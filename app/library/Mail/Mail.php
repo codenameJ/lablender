@@ -51,7 +51,7 @@ class Mail extends Component
         }
 
         if (empty($params['subject'])) {
-            $subject = "Phalcon Demo App";
+            $subject = "Lablender Activation";
         } else {
             $subject = $params['subject'];
         }
