@@ -9,6 +9,8 @@ class lendController extends ControllerBase {
 
   public function indexAction(){
 
+		$this->CheckStudent();
+
 		$lineitems = array();
     if ($this->session->has('cart')) {
 		$cart = $this->session->get('cart');
@@ -29,6 +31,8 @@ class lendController extends ControllerBase {
   }
 
   public function emptyCartAction(){
+		$this->CheckStudent();
+
     $this->session->remove('cart');
     $this->response->redirect('lend');
 	}
@@ -62,6 +66,8 @@ class lendController extends ControllerBase {
 
   public function requestAction(){
 
+		$this->CheckStudent();
+		
 			$request = new request();
 			$requestdate = date("Y-m-d H:i:s"); 
 			$getstdid=$this->session->get('studentID');
