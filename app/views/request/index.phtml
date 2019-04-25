@@ -50,93 +50,120 @@
             <div class="fh5co-narrow-content">
                 <div class="row row-bottom-padded-md">
 
-                    <h1 class="fh5co-heading-colored"> <Strong> Sent Request </strong></h1>
+                    <h1 class="fh5co-heading-colored"> <Strong> Sent Request </strong></h1><br>
 
-                    <!-- left -->
+                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                        <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
+                        <br>
+                        <div class="fh5co-text">
+                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item." id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item.">
+                        </div>
+                    </div>
+                </div>
 
-                    <?php  
+                <!-- --------------------------------------------------- -->
+
+                <script>
+                $(document).ready(function() {
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+                </script>
+                <?php echo $this->flashSession->output(); ?>
+
+                <!-- --------------------------------------------------- -->
+
+                <!-- left -->
+
+                <?php  
                           foreach($sentstdrq as $row){
                            if($row->status != 'receive')
                         { ?>
 
-                    <br><br><br>
+                <br><br><br>
 
-                    <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
-                        <h2 class="fh5co-heading"> <strong> Request ID: </strong>
-                            <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
-                            <?php echo $row->request_id ?>
-                        </h2>
+                <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
+                    <h2 class="fh5co-heading"> <strong> Request ID: </strong>
+                        <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
+                        <?php echo $row->request_id ?>
+                    </h2>
 
-                        <h2 class="fh5co-heading"> <strong> Lending Date: </strong> <?php echo $row->Request_date ?>
-                        </h2>
-                        <h2 class="fh5co-heading"> <strong> Status: <?php echo $row->status ?> </strong> </h2>
+                    <h2 class="fh5co-heading"> <strong> Lending Date: </strong> <?php echo $row->Request_date ?>
+                    </h2>
+                    <h2 class="fh5co-heading"> <strong> Status: <?php echo $row->status ?> </strong> </h2>
 
-                        <?php 
+                    <?php 
                           if($row->status=='wait'){
                         ?>
-                        <a class="btn btn-default"
-                            href="<?php echo $this->url->getBaseUri().'request/delete?rqid='.$row->request_id?>">
-                            DELETE
-                        </a>
-                        <?php } ?>
+                    <a class="btn btn-default"
+                        href="<?php echo $this->url->getBaseUri().'request/delete?rqid='.$row->request_id?>">
+                        DELETE
+                    </a>
+                    <?php } ?>
 
-                        <input type="hidden" id="receive" name="receive" value="3">
-                        <?php 
+                    <input type="hidden" id="receive" name="receive" value="3">
+                    <?php 
                           if($row->status=='ready'){
                         ?>
-                        <input class="btn btn-default" type="submit" value="Receive">
+                    <input class="btn btn-default" type="submit" value="Receive">
 
-                        <br><br>
-                        <?php } ?>
+                    <br><br>
+                    <?php } ?>
 
-                    </div>
+                </div>
 
-                    <!-- -------------------------------------------------- -->
+                <!-- -------------------------------------------------- -->
 
-                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                        <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                    <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
 
-                        <table>
-                            <tr>
-                                <th>
-                                    <h2 class="fh5co-heading"> Equip Name </h2>
-                                </th>
-                                <th>
-                                    <h2 class="fh5co-heading"> Quantity </h2>
-                                </th>
-                            </tr>
+                    <table>
+                        <tr>
+                            <th>
+                                <h2 class="fh5co-heading"> Equip Name </h2>
+                            </th>
+                            <th>
+                                <h2 class="fh5co-heading"> Quantity </h2>
+                            </th>
+                        </tr>
 
-                            <!-- ----------------------------------------- -->
+                        <!-- ----------------------------------------- -->
 
-                            <?php
+                        <?php
                           $requestdetail = request_detail::find("Request_id ='$row->request_id'");
                           foreach($requestdetail as $detail){
                             $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
                         ?>
 
-                            <tr>
-                                <!-- equip name -->
-                                <td>
-                                    <p class="fh5co-lead"> <?php echo $equip->Equip_Name ?> </p>
-                                </td>
+                        <tr>
+                            <!-- equip name -->
+                            <td>
+                                <p class="fh5co-lead"> <?php echo $equip->Equip_Name ?> </p>
+                            </td>
 
-                                <!-- quatity -->
-                                <td>
-                                    <p class="fh5co-lead"> <?php echo $detail->Equip_Num ?> </p>
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </table>
+                            <!-- quatity -->
+                            <td>
+                                <p class="fh5co-lead"> <?php echo $detail->Equip_Num ?> </p>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </table>
 
-                        <br><br>
+                    <br><br>
 
-                    </div>
-
-                    <?php } ?>
-                    <?php } ?>
                 </div>
+
+                <?php } ?>
+                <?php } ?>
             </div>
-        </form>
+    </div>
+    </form>
     </div>
 
 

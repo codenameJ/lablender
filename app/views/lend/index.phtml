@@ -36,34 +36,7 @@
 
                 <div class="row row-bottom-padded-md">
                     <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <!-- <div class="col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft"> -->
-                        <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
-                        <br>
-                        <div class="fh5co-text">
-                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
-                                placeholder="Search for item." id="myInput" onkeyup="myFunction()"
-                                placeholder="Search for item.">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- --------------------------------------------------- -->
-
-                <script>
-                $(document).ready(function() {
-                    $("#myInput").on("keyup", function() {
-                        var value = $(this).val().toLowerCase();
-                        $("#myTable tr").filter(function() {
-                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                        });
-                    });
-                });
-                </script>
-                <?php echo $this->flashSession->output(); ?>
-
-                <!-- --------------------------------------------------- -->
-
-
+                      
                 <!------------- equipments list table --------------------------->
                 <!-- tr = row = แกน x , column = แกน y, th = header, td = cell -->
                 <table id="myTable" class="table">

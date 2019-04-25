@@ -50,74 +50,100 @@
 
                 <div class="row row-bottom-padded-md">
                     <?php echo $this->flashSession->output(); ?>
+                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                        <div class="fh5co-icon"> <i class="icon-search4"></i> </div>
+                        <br>
+                        <div class="fh5co-text">
+                            <input type="text" class="form-control" id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item." id="myInput" onkeyup="myFunction()"
+                                placeholder="Search for item.">
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- left -->
+                <!-- --------------------------------------------------- -->
 
-                    <form action="" method="post">
+                <script>
+                $(document).ready(function() {
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+                </script>
+                <?php echo $this->flashSession->output(); ?>
 
-                        <?php  
+                <!-- --------------------------------------------------- -->
+
+                <!-- left -->
+
+                <form action="" method="post">
+
+                    <?php  
                           foreach($sentallhis as $row)
                         { ?>
 
-                        <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
+                    <div class="col-md-5 animate-box" data-animate-effect="fadeInLeft">
 
-                            <h2 class="fh5co-heading"> <strong> Request ID: </strong>
-                                <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
-                                <?php echo $row->request_id ?>
-                            </h2>
+                        <h2 class="fh5co-heading"> <strong> Request ID: </strong>
+                            <input type="hidden" id="rqid" name="rqid" value="<?php echo $row->request_id?>">
+                            <?php echo $row->request_id ?>
+                        </h2>
 
-                            <h2 class="fh5co-heading"> <strong> Request Date: </strong> <?php echo $row->request_date ?>
-                            </h2>
+                        <h2 class="fh5co-heading"> <strong> Request Date: </strong> <?php echo $row->request_date ?>
+                        </h2>
 
-                            <h2 class="fh5co-heading"><strong> Received Date: </strong> <?php echo $row->receive_date ?>
-                            </h2>
+                        <h2 class="fh5co-heading"><strong> Received Date: </strong> <?php echo $row->receive_date ?>
+                        </h2>
 
-                        </div>
+                    </div>
 
-                        <!-- right -->
-                        <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-                            <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
-                            <table>
+                    <!-- right -->
+                    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                        <h2 class="fh5co-heading"> <strong> Detail: </strong></h2>
+                        <table>
 
-                                <tr>
-                                    <th>
-                                        <h2 class="fh5co-heading"> Equip Name </h2>
-                                    </th>
-                                    <th>
-                                        <h2 class="fh5co-heading"> Quantity </h2>
-                                    </th>
-                                </tr>
+                            <tr>
+                                <th>
+                                    <h2 class="fh5co-heading"> Equip Name </h2>
+                                </th>
+                                <th>
+                                    <h2 class="fh5co-heading"> Quantity </h2>
+                                </th>
+                            </tr>
 
-                                <!-- row2 -->
-                                <?php
+                            <!-- row2 -->
+                            <?php
                                 $requestdetail = request_detail::find("Request_id ='$row->request_id'");
                                 foreach($requestdetail as $detail){
                                 $equip = equip::findFirst("Equip_id = '$detail->Equip_id'");
                             ?>
-                                <tr>
-                                    <td>
-                                        <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
-                                    </td>
-                                    <td>
-                                        <p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <p class="fh5co-lead"><?php echo $equip->Equip_Name ?></p>
+                                </td>
+                                <td>
+                                    <p class="fh5co-lead"><?php echo $detail->Equip_Num ?></p>
+                                </td>
+                            </tr>
 
-                                <?php } ?>
-                            </table>
+                            <?php } ?>
+                        </table>
 
-                            <br><br>
+                        <br><br>
 
-                        </div>
+                    </div>
 
-                        <?php } ?>
+                    <?php } ?>
 
 
-                    </form>
-                </div>
-
+                </form>
             </div>
+
         </div>
+    </div>
 </body>
 
 </html>
