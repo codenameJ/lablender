@@ -31,10 +31,16 @@ class equipController extends ControllerBase {
     $seleq=trim($this->request->getPost('eqid'));
     $qty=trim($this->request->getPost('eqnum'));
 
+    $equip = equip::findFirst("Equip_id = '$seleq'");
+
     if ($this->session->has('cart')) {
       $cart = $this->session->get('cart');
       if (isset($cart[$seleq])){
+        if($cart[$seleq]+$qty<=$equip->Equip_Num){
         $cart[$seleq]=$cart[$seleq]+$qty; //add qty to product in cart
+        }else{
+          $this->flashSession->error('Equip Not Enough');
+        }
       }
       else {
         $cart[$seleq]=$qty; //new product in cart
