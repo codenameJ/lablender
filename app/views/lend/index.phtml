@@ -48,7 +48,7 @@
                     <thead>
                         <tr>
 
-                            <th><h2 class="fh5co-heading" data-field="eqname"> Equip ID </h2></th>
+                            <th><h2 class="fh5co-heading" data-field="eqid"> No. </h2></th>
                             <th><h2 class="fh5co-heading" data-field="eqname"> Equip Name </h2></th>
                             <th><h2 class="fh5co-heading" data-field="eqnum"> Quantity </h2></th>
 
@@ -60,7 +60,8 @@
                     
                     <!-- list column 1----------------- -->
 
-                    <?php  
+                    <?php 
+                    $i = 1;
               foreach($lineitems as $row)
             { 
               $equip = $row['equip'];?>
@@ -69,6 +70,7 @@
                             <td>
                                 <!-- <p class="fh5co-lead"><?php echo $equip->Equip_id ?></p> -->
                                 <input type="hidden" name="equip[]" readonly value="<?php echo $equip->Equip_id?>">
+                                <p class="fh5co-lead" name="i"><?php echo $i++ ?></p>
                                 <!-- <input type="hidden" name="eqid" id="eqid" value="<?php echo $equip->Equip_id?>"> -->
                             </td>
                             <td>
@@ -80,9 +82,11 @@
                                 <!-- <input type="hidden" name="eqnum" id="eqnum" value="<?php echo $row['qty'] ?>"> -->
                                 <!-- <td>
                             <button type="button" class="btn btn-default" value="remove" onClick="$(this).closest('tr').remove();">Remove</button>
-			                </td>
-                            <td><a href="<?php echo $this->url->getBaseUri().'lend/delete'?>">
+			                </td> -->
+                            <!-- <td><a href="<?php echo $this->url->getBaseUri().'lend/delete?eqid='.$equip->Equip_id?>">
                                     DELETE </a></td> -->
+                                    <button type="button" class="btn btn-default" value="remove" onClick="$(this).closest('tr').remove();"><span class="glyphicon glyphicon-remove">remove</button>
+
                         </tr>
                         <?php } ?>
 
@@ -90,12 +94,32 @@
                         <!------------------------- end column 1 -->
                 </table>
 
+<script>
+$(".btn.subtract").click(function () {
+	var i=$(this).val();
+	
+	var row = $(this).closest('tr');
+	var qty = row.find('.qty');
+	var quantity = parseInt(qty.val());
+	if (quantity>1) {
+		quantity = quantity - 1;
+		var ttlQty = parseInt($('#ttlQty').text());
+		ttlQty = ttlQty + 1;
+		$('#ttlQty').text(ttlQty);
+	}
+	$(qty).val(quantity);
+	/*calcTotal();*/
+});
+</script>
+
                 <p> Please click <strong> summit </strong> to send a request</p><br>
                 <a class="btn btn-primary" href="<?php echo $this->url->getBaseUri().'lend/emptyCart'?>">
                 empty </a>
             <button type="submit" class="btn btn-primary">Submit</button>
 
             </div>
+
+            </form>
             <!-- </div> -->
 
           

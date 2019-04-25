@@ -39,30 +39,21 @@ class lendController extends ControllerBase {
 	}
 	
 	public function deleteAction(){
+
+		$seleq=$this->request->getPost('eqid');
+
+    $equip = equip::findFirst("Equip_id = '$seleq'");
+
+    if ($this->session->has('cart')){
+			$cart = $this->session->get('cart');
+			$key = array_search($seleq,$cart);
+      if (isset($cart[$seleq])){
+        unset($cart[$seleq][$key]);
+      }
+    }
+		$this->session->set('cart',$cart); // make the cart a session variable
 		
-	// 	$equip = trim($this->request->getPost('eqid'));
-	// 	$eq = equip::findFirst("Equip_id ='$equip'");
-	// 	$qty = trim($this->request->getPost('eqnum'));
-
-	// 	$seleq=trim($this->request->getPost('eqid'));
-	// 	$eq = equip::findFirst("Equip_id ='$seleq'");
-  //   $qty=trim($this->request->getPost('eqnum'));
-
-  //   if ($this->session->has('cart')) {
-	// 		$cart = $this->session->get('cart');
-  //     if($cart[$eq->Equip_id]==$seleq){
-	// 			unset($cart[$eq->Equip_id][$qty]);
-	// 			// $cart[$eq->Equip_id]=" ";
-  //       // $this->response->redirect('profile'); //add qty to product in cart
-  //     }else{
-	// 			unset($cart[$seleq]);
-	// 			// $this->response->redirect('profile'); 
-	// 		}
-	// 	}
-	// 	$this->session->set('cart',$cart);
-	// }
-	
-	// $this->response->redirect('lend');
+		$this->response->redirect('lend');
 }
 
   public function requestAction(){
