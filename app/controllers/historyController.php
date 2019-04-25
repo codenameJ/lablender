@@ -17,9 +17,9 @@ class historyController extends ControllerBase {
   }
   
   public function allAction(){
-    $this->CheckTa();
-    $his=history::find();
 
+    $this->checkTa();
+    $his=history::find();
     $this->view->sentallhis = $his;
 
   }

@@ -233,6 +233,17 @@ class ClientController extends ControllerBase {
 
         $this->response->redirect('client/ta');
 
+    }
+    
+    public function deleteAction(){
+
+        $getclid=$this->request->get('id');
+        $editcli=client::findFirst("client_id = '$getclid'");
+        
+        $editcli->delete();
+
+        $this->response->redirect('client');
+
     } 
 
 }

@@ -9,7 +9,7 @@ class lendController extends ControllerBase {
 
   public function indexAction(){
 
-		$this->CheckStudent();
+		$this->checkStudent();
 
 		$lineitems = array();
     if ($this->session->has('cart')) {
@@ -31,7 +31,8 @@ class lendController extends ControllerBase {
   }
 
   public function emptyCartAction(){
-		$this->CheckStudent();
+
+		$this->checkStudent();
 
     $this->session->remove('cart');
     $this->response->redirect('lend');
@@ -66,8 +67,7 @@ class lendController extends ControllerBase {
 
   public function requestAction(){
 
-		$this->CheckStudent();
-		
+		if($this->session->has('studentID')){
 			$request = new request();
 			$requestdate = date("Y-m-d H:i:s"); 
 			$getstdid=$this->session->get('studentID');
@@ -103,7 +103,12 @@ class lendController extends ControllerBase {
 			$this->session->remove('cart');
 			$this->flashSession->success("The Order has been placed");
 			$this->response->redirect('equip');
-}
+
+		}else{
+			$this->response->redirect('profile');
+		}
+
+	}
   
 
 }
