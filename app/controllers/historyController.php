@@ -18,10 +18,12 @@ class historyController extends ControllerBase {
   
   public function allAction(){
 
-    $this->checkTa();
+    if($this->session->has('studentID')){
+      $this->response->redirect('profile');
+    }else{
     $his=history::find();
     $this->view->sentallhis = $his;
-
+    }
   }
 
 }
